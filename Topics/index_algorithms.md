@@ -1,0 +1,43 @@
+---
+tags:
+  - WIP
+---
+Algorithms is a term used for sequence of steps or procedure used to solve a specific problem. Here we'll study some of the most common and widely used algorithms.
+
+- Maximum Subarray
+- [Binary Exponentiation](../Algorithms/algo_binary_exponentiation.md)
+- Primality Tests and Factorisation
+- [GCD and LCM](../Algorithms/algo_gcd_lcm.md)
+- Extended Euclidean
+- [nth Fibonacci term](../Algorithms/algo_nth_fib_term.md)
+- Permutation and Combination
+- Strassen's Matrix Multiplication
+- Searching
+- Sorting
+- Hare and Tortoise
+- Huffman Encoding
+- Hemming codes
+- Path finding
+- Disjoint Set Union Find
+- Fourier Transform
+- Hashing
+- Solving Linear Equations
+- Determinant
+- Matrix Rank
+- Prefix \& Suffix Arrays
+- Dynamic Programming
+- Greedy Algorithms
+- Scheduling
+- Graph Properties and Algorithms
+- Topological Sorting
+- Monotonic Stack
+- Convex Hull
+- Sweep Line
+- Voronoi Systems
+- String and Pattern Matching
+- Network Flow
+- Game Theory
+- ADHOC Problems
+- Two Pointer
+- Computational Geometry
+- Optimization
