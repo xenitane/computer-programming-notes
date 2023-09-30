@@ -1,7 +1,0 @@
-- [Scope](../Control_Flow/cf_scope.md)
-- [if/else](../Control_Flow/cf_if_else.md)
-- [for/while/do](../Control_Flow/cf_loops.md)
-- [break/continue](../Control_Flow/cf_br_ct.md)
-- [switch/case](../Control_Flow/cf_switch_case.md)
-- [labels/goto](../Control_Flow/cf_label_goto.md)
-- [functions/return](../Control_Flow/cf_functions.md)
