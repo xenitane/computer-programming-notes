@@ -12,5 +12,4 @@ These operators are used to assign a value to the reference given by the left op
 10. **<<\=** : copies the value obtained by shifting the value left operand to the left by the value of right operand into the reference of the left operand
 11. **>>\=** : copies the value obtained by shifting the value left operand to the right by the value of right operand into the reference of the left operand
 
-> And another way of understanding the mix assignment operators in as follows:
-> **x (op)= y --> x = (x) (op) (y)**
+> [!note] And another way of understanding the mix assignment operators in as follows: **x (op)= y --> x = (x) (op) (y)**

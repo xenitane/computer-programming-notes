@@ -12,7 +12,7 @@ These are the logical operators we have
 3. **^** : binary xor - used only on integral types and it's result is obtained by performing the logical xor on each corresponding bit in the operands, and unfortunately there is no logical version of it.
 4. **~** : binary not - this operator also needs one operand and is only used on integral operand and it's result is obtained by performing the logical not on each bit of the operand
 
-### Shifting:
+### shifting:
 > can only be done on integral types, the left operand is what to shift and the right operand is by how much. Both must be integral types and the right one must always be non zero.
 > And the way we can see how shifting works is like this, as we said that the size of these types is fixed, let's say that there is a frame in which the number is kept like a picture, we are just moving that data around and seeing the result of that, and the excess bits moved around are lost.
 1. **<<** : left-shift - the bits are shifted to the left by the specified amount and the new bits that fill the right are zeros.
@@ -36,4 +36,4 @@ a>>1              // 2 (10)
 0x90000000 >> 2   // 0xe4000000
 ```
 
-> I have written some numbers in a weird format, that's to save some space and time here, but fear not you'll understand once you cover how to represent numbers in different formats.
+> [!todo] I have written some numbers in a weird format, that's to save some space and time here, but fear not you'll understand once you cover how to represent numbers in different formats.

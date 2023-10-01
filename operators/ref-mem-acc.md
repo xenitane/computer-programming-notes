@@ -30,6 +30,7 @@ So you remember that we can create collections of elements as mentioned earlier.
 	type* p=some_address;
 
 	*(p + idx);
+	p[idx];
 	```
 - Structured Collection, elements have names, done using the dot(\.)
 	```c

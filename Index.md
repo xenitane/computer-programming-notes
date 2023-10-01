@@ -4,15 +4,18 @@
 > While programming, we'll face several problems where the code we've written might not work correctly, and that's alright, these mistakes will show us what we are doing incorrect while writing the instruction sequence, and we'll work on them to reach the desired solution. 
 
 ## Topics:
-- [Intro to C-Language](./topics/c-basics.md)
-- [Data Types and Variables](./topics/data-types-vars.md)
-- [Scope](./topics/scope.md)
-- [Operators](./topics/operators.md)
-- [Preprocessors in C](Topics/index_preprocessors.md)
-- [IO in C](Topics/index_io.md)
-- [Control Flow](Topics/index_control_flow.md)
-- [Memory](Topics/index_memory.md)
-- [Complexity Analysis](Topics/index_complexity.md)
-- [Number Theory](Topics/index_number_theory.md)
-- [Data Structures](Topics/index_data_structures.md)
-- [Algorithms](Topics/index_algorithms.md)
+`class:multi-col-list`
+
+- [[./topics/c-basics.md|Intro to C-Language]]
+- [[./topics/data-types-vars.md|Data Types and Variables]]
+- [[./topics/scope.md|Scope]]
+- [[./topics/operators.md|Operators]]
+- [[./topics/preprocessors.md|Preprocessors in C]]
+- [[./topics/keywords.md|Keywords]]
+- [[./topics/io|IO in C]]
+- [[./topics/control-flow.md|Control Flow]]
+- [[../topics/memory.md|Memory]]
+- [[../topics/complexity.md|Complexity Analysis]]
+- [[./topics/number-theory.md|Number Theory]]
+- [[./topics/data-structures.md|Data Structures]]
+- [[./topics/algorithms.md|Algorithms]]

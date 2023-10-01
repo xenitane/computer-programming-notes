@@ -1,4 +1,6 @@
 {
   "readableLineLength": false,
-  "defaultViewMode": "preview"
+  "defaultViewMode": "preview",
+  "newFileLocation": "root",
+  "showLineNumber": true
 }

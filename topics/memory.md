@@ -50,9 +50,9 @@ p2=(int*)realloc(p2,6*sizeof(int));
 p2=(int*)realloc(p2,0);
 ```
 
-> Pointers are dangerous, if you don't know what you are doing, you can lead to problematic behaviour. See below example.
+> [!warning] Pointers are dangerous, if you don't know what you are doing, you can lead to problematic behavior. See below example.
 
 ```c
-int z;
+int z=some_value;
 float y=*(float*)&z;
 ```

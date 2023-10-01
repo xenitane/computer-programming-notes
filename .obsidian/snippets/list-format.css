@@ -1,0 +1,14 @@
+.multi-col-list ul{
+  list-style-type: disc;
+  overflow:hidden;
+}
+
+.multi-col-list ul li {
+  margin: 5px calc(10% /6);
+  float: left;
+  display: inline;
+  width: 30%;
+  border:2px solid #aaa;
+  border-radius: 5px;
+  padding: 10px
+}

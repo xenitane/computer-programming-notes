@@ -1,6 +1,0 @@
-- [if/else](../control-flow/conditionality.md)
-- [for/while/do](../control-flow/loops.md)
-- [break/continue](../control-flow/br_ct.md)
-- [switch/case](../control-flow/switch_case.md)
-- [labels/goto](../control-flow/label_goto.md)
-- [functions/return](../control-flow/cf_functions.md)

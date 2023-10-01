@@ -34,22 +34,24 @@ First I'll present you with some prerequisites you'll need to fulfill:
 			3. Now the installer will fetch the list of tools on that server, and after this you'll see a weird window.
 			4. Now select the `Full` view next to the category drop-down.
 			5. Finally we need to select the packages we need which are (use the search box above and match exact names, to select the package if skipped, just double click on `Skip` next to the package name):
+				`class:multi-col-list`
+				
 				- `gcc-core`
 				- `gcc-g++`
 				- `gcc-fortran`
 				- `gcc-objc`
 				- `gcc-objc++`
+				- `gdb`
 				- `automake`
 				- `cmake`
 				- `imake`
 				- `make`
-				- `gdb`
-				- `libboost-devel`
 				- `nano`
 				- `curl`
 				- `libcurl-devel`
+				- `libboost-devel`
 				- `bash-completion`
-			6. Now just click on next and install buttons 
+			6. Now just click on next and install buttons u
 		- Finally add the location `C:\cygwin64\bin` or `C:\cygwin\bin` (as per your install) to the system `PATH` variable. (Search the internet for editing the `PATH` variable in windows)
 - Now just restart your system for it to digest all the new things we've setup on it. (Not necessary but helpful in some cases)
 - With all the necessary tools installed, now we'll start writing our first `c-program` which will just be a `hello` program.
@@ -61,7 +63,6 @@ Now follow these steps:
 1. Open your code editor which we installed earlier
 2. Create a new file and name it `hello.c`
 3. Write the code below into it and save it.
-
 	```c
 	#include<stdio.h>
 	
@@ -71,7 +72,7 @@ Now follow these steps:
 		return 0;
 	}
 	```
->There will be a lot of things here you won't understand at first but the journey is worth the wait 	
+	> [!tldr] There will be a lot of things here you won't understand at first but the journey is worth the wait 	
 
 4. Time to compile the code and run it. For this step we need the command line and we need to do this:
 	1. In the command line navigate to the folder where you've saved the `hello.c` file using. (refer internet)
@@ -83,7 +84,7 @@ Now follow these steps:
 
 ---
 
- > And this will be the standard procedure we'll follow through.
+ > [!info] And this will be the standard procedure we'll follow through.
 
 Now let's see what's going on in the code we just wrote above:
 
