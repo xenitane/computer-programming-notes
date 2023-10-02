@@ -4,7 +4,7 @@ We can also interpret them as lists of elements of same type. And the indexing f
 
 So the index represents the number of elements between the first element and that element.
 
-![array](../Diagrams/array.svg)
+![[../diagrams/array.svg|array]]
 
 We'll be using `C` for this course and we create arrays in c in many ways:
 1. static fixed size array:
@@ -25,4 +25,3 @@ type* name3=(type*)calloc(capacity,sizeof(type));
 At any moment we can access any element from the array given we know the name of array and the element of index.
 
 Now in these scenarios we can access a memory address that's outside the bounds of our array as we are simply using the memory addresses. So while writing code, make sure that you don't do this as it can lead to undefined behaviour.
-[reference](../Topics/index_memory.md)

@@ -18,18 +18,16 @@ a<d    // true
 b<=c   // true  
 ```
 
-> [!note] A new comparison operator is now added in `C++` starting from the `C++20` standard called the three way comparison operator written as `<=>`. Usage is as follows
-
-```c++
-a<=>b
-/*
-is negative when a is less than b
-is zero when a is equal to b
-is positive when a is greater than b
-*/
-
-//
-10<=>10 //0
-1<=>2   //negative
-2<=>2   //positive
-```
+> [!note] A new comparison operator is now added in `C++` starting from the `C++20` standard called the three way comparison operator written as `<=>`.
+> ```cpp
+> a<=>b;
+> /*
+> is negative when a is less than b
+> is zero when a is equal to b
+> is positive when a is greater than b
+> */
+> 
+> 10<=>10; // 0
+> 1<=>2;   // -ve
+> 2<=>1;   // +ve
+> ```

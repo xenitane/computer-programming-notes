@@ -1,4 +1,4 @@
-Now that we have seen [[conditionality.md|decision making]] and [[loops.md|loops]], we come to wonder if we have the ability to exit the loops in the middle if certain conditions are met or skip further code.
+Now that we have seen _decision making[^1]_ and _loops[^2]_, we come to wonder if we have the ability to exit the loops in the middle if certain conditions are met or skip further code.
 
 Well look no further, this is done by the `break` and `continue` keywords.
 ## break
@@ -46,3 +46,6 @@ while(condition1){
 
 > [!note] These keywords can also be used in `for` and `do/while` loops.
 
+
+[^1]: [conditionality](conditionality.md)
+[^2]: [loops](loops.md)

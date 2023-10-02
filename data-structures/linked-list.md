@@ -1,7 +1,7 @@
-Now we have an interesting contender to see, the linked lists, suppose, you want to store an sequence of data, but continuous memory of that size is not available, hence we cannot make an [array](ds_array) for this purpose, but there is something else we can do, suppose we created a single block storing one element and also the address where the next element is store in a similar way, and now we have a linked list.
+Now we have an interesting contender to see, the linked lists, suppose, you want to store an sequence of data, but continuous memory of that size is not available, hence we cannot make an _array[^1]_ for this purpose, but there is something else we can do, suppose we created a single block storing one element and also the address where the next element is store in a similar way, and now we have a linked list.
 
 A visual representation for linked-list is given below:
-![](../Diagrams/linked_list.svg)
+![](../diagrams/linked_list.svg)
 
 What are some properties and functions for linked list node:
 - Properties

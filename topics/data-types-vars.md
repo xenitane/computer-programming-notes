@@ -23,7 +23,7 @@ Here, p can vary and the number we have can be doubled, quadrupled, halved, quar
 
 And let's not forget all the different characters of the writing system like the alphabets, the mathematical symbols and other stuff, we need that too. So let's reserve a way of storing them too in a format called character.
 
-So now we have counting numbers, fractions, characters. A complete guide on their sizes and ranges can be found [here](https://en.cppreference.com/w/c/language/arithmetic_types).
+So now we have counting numbers, fractions, characters. A complete guide on their sizes and ranges can be found _here[^1]_.
 
 And there is still something left, we have instanced where we want to just have a type that doesn't denote anything, and as it's like this we call it void.
 
@@ -61,7 +61,10 @@ example:
 
 | binary    | octal | decimal   | hexadecimal    |
 | :-------: | :-:   | :-------: | : -----------: |
-| 11001     | 31    | 25        | 19             | 
-| 1000001   | 101   | 65        | 41             |
+| 0b11001   | 031   | 25        | 0x19           |
+| 0b1000001 | 0101  | 65        | 0x41           |
 
-And that's not it, there are a lot more types we can create just by using collection of same type or different types we mentioned above and the types we created earlier. And these collections are called [[data-structures.md|data structures]]. And we'll study them later in detail.
+And that's not it, there are a lot more types we can create just by using collection of same type or different types we mentioned above and the types we created earlier. And these collections are called _data structures[^2]_. And we'll study them later in detail.
+
+[^1]: https://en.cppreference.com/w/c/language/arithmetic_types
+[^2]: [data structures](data-structures.md)

@@ -6,5 +6,11 @@ And if we start laying out these hierarchies as they appear, these will be as fo
 1. System Environment or the Operating System
 2. The Global Scope of the program
 3. The scope of functions we declare in the program
-4. The scope we further make inside those functions, and this can be done using [[../control-flow/conditionality.md|decision statements]], [[../control-flow/loops.md|loops]], [[../control-flow/switch-case.md|switches]], [[../control-flow/functions.md|functions]] and a lot of other ways which we'll see later.
+4. The scope we further make inside those functions, and this can be done using _decision statements[^1]_, _loops[^2]_, _switches[^3]_, _functions[^4]_ and a lot of other ways which we'll see later.
 5. And subsequently we can create a scope inside a scope by repeating the methods in step 4.
+
+
+[^1]: [conditionally](../control-flow/conditionality.md)
+[^2]:[loops](../control-flow/loops.md)
+[^3]: [switch](../control-flow/switch-case.md)
+[^4]: [functions](../control-flow/functions.md)

@@ -35,7 +35,6 @@
   "spoiler-block-obsidian",
   "obsidian-sortable",
   "settings-search",
-  "obsidian-mind-map",
   "mermaid-tools",
   "multi-column-markdown",
   "obsidian-charts",
@@ -54,6 +53,9 @@
   "obsidian-advanced-new-file",
   "obsidian-outliner",
   "latex-algorithms",
-  "obsidian-smart-typography",
-  "pseudocode-in-obs"
+  "pseudocode-in-obs",
+  "mathlinks",
+  "dataview",
+  "math-booster",
+  "obsidian-mind-map"
 ]

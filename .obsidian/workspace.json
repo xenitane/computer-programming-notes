@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "2a6d2ea8cef394c7",
+        "id": "f652a3b87fc4d83d",
         "type": "tabs",
         "children": [
           {
-            "id": "ddc22ff428c6cf88",
+            "id": "b8cbcc1dc155c9e0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Index.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -39,7 +34,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "...",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -87,9 +82,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Index.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": false
+                "linksCollapsed": true,
+                "unlinkedCollapsed": true
               }
             }
           },
@@ -125,7 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 329.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -141,39 +135,6 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "ddc22ff428c6cf88",
-  "lastOpenFiles": [
-    "topics/number-theory.md",
-    "Index.md",
-    "topics/c-basics.md",
-    "topics/keywords.md",
-    "topics/data-structures.md",
-    "topics/scope.md",
-    "number-theory/multiplicative-inverse.md",
-    "number-theory/modulo-arithmetic.md",
-    "topics/algorithms.md",
-    "number-theory/additive-inverse.md",
-    "number-theory/number-systems.md",
-    "topics/complexity.md",
-    "topics/memory.md",
-    "topics/control-flow.md",
-    "control-flow/functions.md",
-    "control-flow/label-goto.md",
-    "control-flow/switch-case.md",
-    "control-flow/br-ct.md",
-    "control-flow/loops.md",
-    "control-flow/conditionality.md",
-    "topics/io.md",
-    "topics/preprocessors.md",
-    "topics/operators.md",
-    "operators/delim.md",
-    "operators/ref-mem-acc.md",
-    "operators/ternary.md",
-    "diagrams/modn.svg",
-    "diagrams/modn.svg",
-    "diagrams/linked_list.svg",
-    "topics/c-basics.html",
-    "operators",
-    "topics"
-  ]
+  "active": "b8cbcc1dc155c9e0",
+  "lastOpenFiles": []
 }

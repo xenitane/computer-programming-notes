@@ -22,6 +22,8 @@ void my_func2(){
 
 Every function type except void returns a value of the type of the function.
 
-Functions are also variables which can be passed into other functions and to do that we use [[func-ptr||function pointer]].
+Functions are also variables which can be passed into other functions and to do that we use _function pointer[^1]_.
 
 > [!info] for a void function the return keyword does not need a value, just `return;` is sufficient to exit the function.
+
+[^1]: [function pointer](func-ptr.md)

@@ -13,3 +13,20 @@ These operators are used to assign a value to the reference given by the left op
 11. **>>\=** : copies the value obtained by shifting the value left operand to the right by the value of right operand into the reference of the left operand
 
 > [!note] And another way of understanding the mix assignment operators in as follows: **x (op)= y --> x = (x) (op) (y)**
+
+## Examples:
+
+```c
+int z;
+z=1;   // z=1
+z+=3;  // z=4
+z-=2;  // z=2
+z*=5;  // z=10
+z/=4;  // z=2
+z%=5;  // z=2
+z|=16; // z=18
+z&=17; // z=18
+z^=12; // z=30
+z<<=2; // z=7
+z>>=3; // z=56
+```

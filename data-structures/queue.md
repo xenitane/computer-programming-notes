@@ -3,7 +3,7 @@ After stacks we gotta learn about queues.
 To imagine a stack, imagine a pipe in which you can put stuff from one end at a time and take the stuff out and one a at time too from the opposite end, and the rule is that you can view/pull out the element inserted first.
 
 Below is a visual representation of a queue:
-![stack](../Diagrams/queue.svg)
+![stack](../diagrams/queue.svg)
 
 And a queue has some properties and functions:
 - Properties:

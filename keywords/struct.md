@@ -38,7 +38,7 @@ typedef struct{
 }s2;
 ```
 
-We have the [primitive data types](../Topics/index_variables.md) and we can use them in a special way, bit fields inside a struct where they have to be smaller than their original size, otherwise there will be an compilation error.
+We have the _primitive data types[^1]_ and we can use them in a special way, bit fields inside a struct where they have to be smaller than their original size, otherwise there will be an compilation error.
 
 ```c
 typedef struct{

@@ -1,7 +1,3 @@
----
-tags:
-  - WIP
----
 In every language there is a basic vocabulary, and for programming languages there are some words for specific functions and they are reserved. Here we’ll study the keywords that are present in the C-language.
 
 `class:multi-col-list`

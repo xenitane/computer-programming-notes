@@ -2,14 +2,17 @@
 tags:
   - WIP
 ---
+
 Algorithms is a term used for sequence of steps or procedure used to solve a specific problem. Here we'll study some of the most common and widely used algorithms.
 
-- Maximum Subarray
-- [Binary Exponentiation](../Algorithms/algo_binary_exponentiation.md)
-- Primality Tests and Factorisation
-- [GCD and LCM](../Algorithms/algo_gcd_lcm.md)
-- Extended Euclidean
-- [nth Fibonacci term](../Algorithms/algo_nth_fib_term.md)
+`class:multi-col-list`
+
+- [[../algorithms/gcd-lcm|GCD and LCM]]
+- [[../algorithms/max-sub-array|Maximum Subarray]]
+- [[../algorithms/bin-exp.md|Binary Exponentiation]]
+- [[../algorithms/fib-nums.md|Fibonacci Series]]
+- [[../algorithms/prime-test-factors.md|Prime Tests and Factorization]]
+- [[../algorithms/ext-euclid.md|Extended Euclidean]]
 - Permutation and Combination
 - Strassen's Matrix Multiplication
 - Searching

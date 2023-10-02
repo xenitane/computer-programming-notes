@@ -10,7 +10,7 @@ And after this lengthy introduction, I won't deny if you are feeling bored, but 
 ## Prerequisites
 
 First I'll present you with some prerequisites you'll need to fulfill:
-- You need to have a code editor installed on your system, like for example: [Visual Studio Code](http://code.visualstudio.com) along with extensions support and your config as you need it to function.
+- You need to have a code editor installed on your system, like for example: _Visual Studio Code[^1]_ along with extensions support and your config as you need it to function.
 - We'll be following the **==GNU/GCC==** standard of `C-language` so the compilers like **==Turbo-C==**, **==DevC/DevC++==**, **==MinGW==** etc might give different results, so have that installed along with some other useful tools **==(make sure of an internet connection)==**.
 	- Linux users: you probably don't need me to tell you but anyway, just run the command below in the terminal
 		1. `sudo apt install gcc g++ make gdb git libboost-all-dev`
@@ -27,7 +27,7 @@ First I'll present you with some prerequisites you'll need to fulfill:
 	- Windows Users: You are the most troublesome bunch, cause Microsoft had to go and do it's own thing which is blatant blasphemy. But here you go:
 		1. Download and install (just keep the default settings and click next) `git` command line tool from [here](https://git-scm.com/download/win) according to the config your system. (Setup not Portable)
 		2. Now we're going for the most messed process for installing the `GNU's` `gcc` compiler, so please bear with it.
-		3. Go to [cygwin](http://cygwin.com) homepage and download the installer based on your system config.
+		3. Go to _cygwin[^2]_ homepage and download the installer based on your system config.
 		4. Now run the installer and follow this guide:
 			1. Select `Install from Internet` option and click `Next` 4 times.
 			2. Now after waiting for some time you'll be presented with a list of some `URLs` (these are the locations all over the internet where the tools we need are stored), you can select any one of them but in my personal opinion the `URL`: `https://cygwin.mirror.constant.com` works good. And after selection click next.
@@ -98,3 +98,7 @@ Now let's see what's going on in the code we just wrote above:
 > In this short snippet of code we saw many different things happening, like copying of a whole file without doing it, we wrote a basic function for entry and called another function inside it to print something and finally returned something from that function.
 >
 > There is a lot more yet to come and we'll see how all these things work and more.
+
+
+[^1]: http://code.visualstudio.com
+[^2]: http://cygwin.com

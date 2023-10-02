@@ -3,7 +3,7 @@ Now we are gonna take a dive into the world of data structures and we'll start t
 To imagine a stack, imagine a container in which you can put stuff from one end at a time and also that's the same end from which you take the stuff out and one a at time too and the simple rule is the thing you can take out is the last thing you put in.
 
 Below is a visual representation of a stack:
-![stack](../Diagrams/stack.svg)
+![stack](../diagrams/stack.svg)
 
 And a stack has some properties and functions:
 - Properties:
