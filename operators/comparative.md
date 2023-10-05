@@ -18,7 +18,7 @@ a<d    // true
 b<=c   // true  
 ```
 
-> [!note] A new comparison operator is now added in `C++` starting from the `C++20` standard called the three way comparison operator written as `<=>`.
+> [!info] A new comparison operator is now added in `C++` starting from the `C++20` standard called the three way comparison operator written as `<=>`.
 > ```cpp
 > a<=>b;
 > /*

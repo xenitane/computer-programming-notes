@@ -26,8 +26,8 @@ Topological
 Two
 Type
 Transfers
-Terminates
 Try
+Test
 are
 and
 algorithms
@@ -120,6 +120,13 @@ arrays
 addresses
 already
 asserts
+assertions
+application
+anyone
+arguments
+aware
+assigned
+assure
 my
 mathematics
 more
@@ -199,6 +206,10 @@ maximum
 min
 max
 moment
+maths
+moments
+magic
+maintain
 notes
 needed
 not
@@ -259,7 +270,6 @@ found
 formats
 fortran
 far
-fall
 func
 find
 fashion
@@ -293,6 +303,10 @@ findings
 free
 fields
 full
+factors
+faced
+freed
+factor
 computer
 competitive
 coding
@@ -433,6 +447,10 @@ course
 contender
 container
 capacity
+composite
+constants
+confuse
+correctness
 programming
 problems
 preprocessors
@@ -524,6 +542,11 @@ previous
 put
 pop
 pushing
+primitive
+pipe
+pull
+pass
+property
 We
 While
 Windows
@@ -595,6 +618,8 @@ least
 lies
 linear
 last
+learn
+life
 start
 structures
 stuff
@@ -767,6 +792,8 @@ sick
 stacks
 supplies
 stops
+stays
+surely
 basics
 boring
 but
@@ -816,6 +843,7 @@ bytes
 bottom
 bin
 bu
+black
 in
 into
 is
@@ -894,6 +922,8 @@ increases
 interesting
 inserts
 issues
+inserted
+idea
 then
 the
 to
@@ -953,7 +983,6 @@ turn
 total
 term
 typedef
-terminate
 transform
 transitioned
 table
@@ -964,6 +993,7 @@ topmost
 trying
 temporary
 tasks
+try
 dive
 data
 developing
@@ -1045,6 +1075,10 @@ divisor
 depending
 depth
 disallow
+detailed
+discussed
+defining
+determining
 world
 which
 what
@@ -1095,6 +1129,7 @@ worst
 whenever
 who
 worry
+whatever
 of
 once
 output
@@ -1238,6 +1273,7 @@ exponentially
 ease
 enumerated
 exits
+ever
 juice
 just
 journey
@@ -1276,6 +1312,7 @@ hint
 hints
 hashes
 half
+hands
 And
 As
 An
@@ -1376,6 +1413,8 @@ representing
 rule
 remove
 receives
+reduces
+recall
 understanding
 us
 used
@@ -1402,6 +1441,8 @@ unsigned
 unconditionally
 undefined
 updating
+updated
+unallocate
 ve
 vars
 vast
@@ -1492,6 +1533,7 @@ guess
 great
 grow
 gap
+gotta
 It
 In
 Inclusion
@@ -1500,6 +1542,7 @@ If
 Instead
 Iterate
 Incoming
+Improvement
 Most
 MinGW
 Mac
@@ -1528,6 +1571,8 @@ Huffman
 Hemming
 Hashing
 Hull
+Hey
+Have
 Prerequisites
 Portable
 Program
@@ -1547,6 +1592,7 @@ Pattern
 Problems
 Prime
 Position
+Positions
 First
 Finally
 For
@@ -1649,6 +1695,7 @@ Similarly
 Space
 Same
 Save
+Some
 Open
 Operating
 Okay
@@ -1657,6 +1704,7 @@ Operators
 Or
 One
 Optimization
+Only
 Create
 Collection
 Conditionality
@@ -1685,10 +1733,13 @@ queue
 quot
 qualifier
 qualified
+queues
+question
 RAM
 Replacement
 Rank
 Restrict
+Reference
 zero
 zeros
 xor

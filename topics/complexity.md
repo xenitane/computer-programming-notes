@@ -44,4 +44,5 @@ b&:\text{ the factor by which the problem size gets reduced} \\
 f(n)&:\begin{array}{lr}\text{the bound for the computation required for dividing} \\ \text{the problem into smaller parts, and merging the results.}\end{array}
 \end{align}
 $$
-[reference](https://www.geeksforgeeks.org/advanced-master-theorem-for-divide-and-conquer-recurrences/)
+Here's an _article[^1]_ to help you solve these recurrence relations.
+[^1]: https://www.geeksforgeeks.org/advanced-master-theorem-for-divide-and-conquer-recurrences

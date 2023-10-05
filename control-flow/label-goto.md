@@ -21,7 +21,7 @@ if(condition){
 // and we can similarly implement the continue and break statements.
 ```
 
-> [!info] As we have seen the _preprocessors[^1]_, there is a method for us to create a label maker for loop labels. Let's see how it's done, shall we. The reason for this is that with this we can make several loops.
+> [!tip] As we have seen the _preprocessors[^1]_, there is a method for us to create a label maker for loop labels. Let's see how it's done, shall we. The reason for this is that with this we can make several loops.
 > ```c
 > #include<stdio.h>
 > 

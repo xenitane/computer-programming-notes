@@ -1,18 +1,23 @@
 {
   "main": {
-    "id": "1ed0176bd5a74b3d",
+    "id": "090a68bbafc129c2",
     "type": "split",
     "children": [
       {
-        "id": "f652a3b87fc4d83d",
+        "id": "8a7e7494bdcc3091",
         "type": "tabs",
         "children": [
           {
-            "id": "b8cbcc1dc155c9e0",
+            "id": "2cd0ac71e4009962",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Index.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -21,21 +26,31 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d9a5743d365b1501",
+    "id": "71b076f26f4e8ecd",
     "type": "split",
     "children": [
       {
-        "id": "79c2a3b2fe21af7e",
+        "id": "561719341535f816",
         "type": "tabs",
         "children": [
           {
-            "id": "ca424c903f9777d3",
+            "id": "b8e37dc95cdfa250",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "46c2e23e860e1303",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -44,51 +59,41 @@
             }
           },
           {
-            "id": "899a93fb0c76e728",
+            "id": "0cef33bc09075efd",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {}
             }
-          },
-          {
-            "id": "723990ab6780f855",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
     "width": 300
   },
   "right": {
-    "id": "b5f28153fd981fd9",
+    "id": "64efa7548073aac2",
     "type": "split",
     "children": [
       {
-        "id": "7869f12849e05e58",
+        "id": "6639ac53e333380c",
         "type": "tabs",
         "children": [
           {
-            "id": "902ef9fd84cc6326",
+            "id": "6416550974ed1271",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "linksCollapsed": true,
+                "file": "Index.md",
+                "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "4047aedf3806fd8d",
+            "id": "25fe951d282d95ca",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -99,42 +104,71 @@
             }
           },
           {
-            "id": "91194ba1e2cdb561",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
-          },
-          {
-            "id": "959a91ecca5fc8cb",
+            "id": "755d379808ad41dc",
             "type": "leaf",
             "state": {
               "type": "mathpad-view",
               "state": {}
             }
+          },
+          {
+            "id": "d6b5131a592a8c8a",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 329.5
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "command-palette:Open command palette": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "homepage:Open homepage": false,
       "mathpad:Open Mathpad": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
       "omnisearch:Omnisearch": false,
-      "obsidian-rich-links:Rich Links": false
+      "obsidian-rich-links:Rich Links": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "html-server:Turn Http Server On": false,
+      "html-server:Turn Http Server Off": false
     }
   },
-  "active": "b8cbcc1dc155c9e0",
-  "lastOpenFiles": []
+  "active": "2cd0ac71e4009962",
+  "lastOpenFiles": [
+    "Index.md",
+    "topics/keywords.md",
+    "keywords/sizeof.md",
+    "keywords/typedef.md",
+    "keywords/inline.md",
+    "keywords/restrict.md",
+    "keywords/const.md",
+    "topics/preprocessors.md",
+    "topics/c-basics.md",
+    "topics/operators.md",
+    "algorithms/fib-nums.md",
+    "algorithms/ext-euclid.md",
+    "algorithms/bin-exp.md",
+    "topics/algorithms.md",
+    "data-structures/linked-list.md",
+    "number-theory/multiplicative-inverse.md",
+    "data-structures/stack.md",
+    "algorithms/prime-test-factors.md",
+    "operators/comparative.md",
+    "control-flow/br-ct.md",
+    "control-flow/conditionality.md",
+    "keywords/enum.md",
+    "algorithms/gcd-lcm.md",
+    "control-flow/loops.md",
+    "number-theory/number-systems.md",
+    "operators/ternary.md"
+  ]
 }

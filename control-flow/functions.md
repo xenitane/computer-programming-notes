@@ -22,8 +22,8 @@ void my_func2(){
 
 Every function type except void returns a value of the type of the function.
 
-Functions are also variables which can be passed into other functions and to do that we use _function pointer[^1]_.
+In C we pass arguments by value, hence if we are using structure, a copy of it will be passed to the function, not the original object. And that copy will be stored in the function call stack and when the function exits, that memory is freed.
+
+Functions are also variables which can be passed into other functions and to do that we use [[func-ptr.md|function pointer]].
 
 > [!info] for a void function the return keyword does not need a value, just `return;` is sufficient to exit the function.
-
-[^1]: [function pointer](func-ptr.md)

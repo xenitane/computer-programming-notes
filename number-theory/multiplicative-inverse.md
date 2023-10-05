@@ -2,7 +2,7 @@ Suppose we have two non-zero number `a` and `b`, such that $a*b=1$. Then it is s
 
 And for modulo `n` only natural number less than n are allowed, and the concept of additive inverses becomes $a*b\equiv1\bmod{n}\hspace{5mm}\{a,b\in\mathbb{Z}-\{0\}\}$.
 
-> [!note] note that for a particular n, multiplicative inverse of all number do not exist.
+> [!info] for a particular n, multiplicative inverse of all number do not exist.
  
 suppose we have $p$ and $a$, such that $p\in\mathbb{P}$ and $0<a\leq p$.
 $$

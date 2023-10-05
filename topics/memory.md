@@ -4,25 +4,28 @@ And RAM stands for random access memory. to access a value we either use the var
 
 the way to use pointers is as follows:
 ```c
-int z=1;
-int *p1=&z; //the & operator when places before a variable gives us its address
+type z=val1;
+type *p1=&z; //the & operator when places before a variable gives us its address
 // and to access the value at the address in the pointer we dereference it
-int k=*p1;
+type k=*p1;
 // and similary
-*p1=2; // now the value stored in z is 2
-printf("%d",z) // the output is 2
+*p1=val2; // now the value stored in z is val2
 ```
 
 further we can use multi-layered pointer by increasing the number of asterisks before the pointer name like:
 ```c
-int z=1;
-int *p=&z;
-int **p1=&p;
-int ***p2=&p1;
+type z=1;
+type *p=&z;
+type **p1=&p;
+type ***p2=&p1;
 // and so on
 ```
 
-And to use a place in memory we usually declare a variable(for single value), array(for continuous block of memory divided in equal size). And sometimes we need to dynamically allocate and deallocate memory, and to do so we use the `malloc`,  `calloc`, `realloc`, `free` and some other functions. [reference](https://en.cppreference.com/w/c/memory)
+And to use a place in memory we usually declare a variable(for single value), array(for continuous block of memory divided in equal size). And sometimes we need to dynamically allocate and unallocate memory, and to do so we use the `malloc`,  `calloc`, `realloc`, `free` and some other functions. _reference[^1]_
+
+```c
+type*
+```
 
 examples:
 ```c
@@ -50,9 +53,10 @@ p2=(int*)realloc(p2,6*sizeof(int));
 p2=(int*)realloc(p2,0);
 ```
 
-> [!warning] Pointers are dangerous, if you don't know what you are doing, you can lead to problematic behavior. See below example.
+> [!caution] Pointers are dangerous, if you don't know what you are doing, you can lead to problematic behavior. See below example.
+> ```c
+> float f;
+> int z=*(int*)&f;
+> ```
 
-```c
-int z=some_value;
-float y=*(float*)&z;
-```
+[^1]: https://en.cppreference.com/w/c/memory

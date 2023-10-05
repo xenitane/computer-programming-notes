@@ -11,7 +11,7 @@ Aforementioned number systems are the most common number systems a computer scie
   character set: `{0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f}` (case insensitive)
 - base64 system: 65 characters needed
   character set: `{A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,+,/}`
-  >[!info] The 65th character is `=` which is places at the end for padding the data at the ends.
+  > [!tldr] The 65th character is _=_ which is places at the end for padding the data at the ends.
 
 Notation: $(number)_{base}$
 examples: $(25)_{10}=(11001)_2=(31)_8=(19)_{16}={Z}_{64}$

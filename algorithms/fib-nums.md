@@ -2,7 +2,7 @@ We have the famous Fibonacci series which is computed as follows:
 $$\begin{align}
 F(0)&=0 \\
 F(1)&=1 \\
-F(n)&=F(n-1)+F(n-2)&\{a>1\}
+F(n)&=F(n-1)+F(n-2)&\forall n>1
 \end{align}$$
 and the series evolves as: $0,1,1,2,3,5,8,13,21,34,55,.....$
 

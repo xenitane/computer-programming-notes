@@ -1,14 +1,12 @@
 .multi-col-list ul{
-  list-style-type: disc;
-  overflow:hidden;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 5%;
 }
-
-.multi-col-list ul li {
-  margin: 5px calc(10% /6);
-  float: left;
-  display: inline;
-  width: 30%;
-  border:2px solid #aaa;
-  border-radius: 5px;
-  padding: 10px
+.multi-col-list ul li{
+  width:30%;
+  padding:10px 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }

@@ -4,7 +4,7 @@
   "preferBlock": false,
   "preferBlockForInline": false,
   "preferBlockForCodeblock": true,
-  "evaluate": true,
+  "evaluate": false,
   "declarationStr": ":=",
   "evaluateStr": "=?",
   "evaluateNumericStr": "=~?",

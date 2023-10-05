@@ -11,13 +11,15 @@ We'll be using `C` for this course and we create arrays in c in many ways:
 ```c
 type name0[capacity];
 
-type name1[]={coma_seperated_elements}
+type name1[capacity]={coma_seperated_elements_qty_less_than_or_equal_to_capacity};
+
+type name2[]={coma_seperated_elements};
 ```
 2. dynamically using `malloc` and `calloc`:
 ```c
-type* name2=(type*)malloc(capacity*sizeof(type));
+type* name3=(type*)malloc(capacity*size_of_type);
 
-type* name3=(type*)calloc(capacity,sizeof(type));
+type* name4=(type*)calloc(capacity,size_of_type);
 ```
 
 > Note: In `C` we can resize and free dynamically created arrays using the `realloc` function, and we can also use the range of `free` functions to free the memory.

@@ -2,15 +2,11 @@
 tags:
   - WIP
 ---
-Data Structures are our custom made data types and to be able to use those types again, we need to declare them using a special keyword, and for that we use some special keywords we'll encounter as we go.
+Data Structures are our custom made data types and to be able to use those types again, we define them using various keywords like _struct[^1]_, _enum[^2]_, _union[^3]_, etc.
 
 `class:multi-col-list`
 
 - [[../data-structures/array.md|Array]]
-- [[../keywords/typedef.md|typedef]]
-- [[../keywords/enum.md|enum]]
-- [[../keywords/union.md|union]]
-- [[../keywords/struct.md|struct]]
 - [[../data-structures/stack.md|Stack]]
 - [[../data-structures/queue.md|Queue]]
 - [[../data-structures/linked-list.md|Linked List]]
@@ -30,4 +26,7 @@ Data Structures are our custom made data types and to be able to use those types
 - Sqrt Tree
 - Fibonacci Heap
 - Trie
-- And so on
+
+[^1]: [struct](../keywords/struct.md)
+[^2]: [enum](../keywords/enum.md)
+[^3]: [union](../keywords/union.md)

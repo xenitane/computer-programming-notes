@@ -21,7 +21,7 @@ So you remember that we can create collections of elements as mentioned earlier.
 	// an integer array of size 3
 	type arr[capacity];
 	
-	arr[idx]; // fetches the element at index idx __0-based indexing__
+	arr[idx]; // fetches the element at index idx (0-based indexing)
 	*(arr + idx)   // checking the value at the address arr + idx * sizeof_type_to_which_arr_points_in_bytes
 	/* you can see that these are similar kind of things as in array we have continuous block of memory with divisions of same size that is required by each element */
 	```

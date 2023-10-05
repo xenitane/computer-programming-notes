@@ -34,7 +34,7 @@ enum aa{
 typedef enum{
 	red, blue, green=3,purple, grey=blue+green,white=3
 } colors;
-// red=1, blue=1, green=3, purple=4, grey=4, white=3
+// red=0, blue=1, green=3, purple=4, grey=4, white=3
 ```
 
 And for some of you who are wondering, the `bool` values `true` and `false` can be created using `enum`.

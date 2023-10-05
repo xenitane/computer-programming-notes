@@ -2,3 +2,6 @@ follow
 folder
 follows
 following
+terminate
+Terminates
+fall

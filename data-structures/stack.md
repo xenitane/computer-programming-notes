@@ -97,7 +97,7 @@ void free_stack(stack*s){
 
 Now there is one more stack where you don't have to worry about the max capacity, would you like to take a look into it.
 
-Well instead of `MAX_CAPACITY` we just use `capacity` and when we reach that capacity we just double the size of the data array and when we reach below half the capacity we half the size of data array and all this takes is a call to the `realloc` function. [reference](../Topics/index_memory.md)
+Well instead of `MAX_CAPACITY` we just use `capacity` and when we reach that capacity we just double the size of the data array and when we reach below half the capacity we half the size of data array and all this takes is a call to the `realloc` function. [reference](../topics/memory.md)
 
 Here it goes:
 
@@ -185,7 +185,7 @@ void free_stack(stack*s){
 }
 ```
 
-> Note: in both pieces of codes above, there are places where you'll see [conditions](../Control_Flow/cf_if_else.md), [while loops](../Control_Flow/cf_loops.md), asserts, temporary [variables](../Topics/index_variables.md) , [memory management](../Topics/index_memory.md) etc, they are there to make sure the tasks are executed without any issues.
+> Note: in both pieces of codes above, there are places where you'll see [conditions](../control-flow/conditionality.md), [while loops](../control-flow/loops.md), assertions, temporary [variables](../topics/data-types-vars.md) , [memory management](../topics/memory.md) etc, they are there to make sure the tasks are executed without any issues.
 > 
 > Try to think what those issues can possibly be.
 

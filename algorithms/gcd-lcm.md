@@ -15,7 +15,7 @@ Let's just go through all numbers from $1$ to $\min(a,b)$ and see which largest 
 			\State $res \gets 1$
 			\State $m \gets \min(a,b)$
 			\For{$i \gets 1$ \To $m$}
-				\If{$a \bmod i==0$ and $b \bmod i==0$}
+				\If{$a \bmod i==0$ \AND $b \bmod i==0$}
 					\State $res \gets i$
 				\EndIf
 			\EndFor
