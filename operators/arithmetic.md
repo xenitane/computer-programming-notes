@@ -8,18 +8,18 @@ These are the Arithmetic operators available to us
 5. **%** : modulo - only works with integral types and produces the remainder left when the left operand is divided by the right operand
 6. \( or \) : parenthesis - are used to enclose and expression or value
 
-## Examples
-```c
-int a=10, b=3;
-
-a+b          // 13
-a-b          // 7
-a*b          // 30
-a/b          // 3
-a%b          // 1
-(a+b)/(b*b)  // 1
-
-float x=2.5, y=4.0;
-
-x/y          // 0.625
-```
+> [!example]+ Examples
+> ```c
+> int a=10, b=3;
+> 
+> a+b          // 13
+> a-b          // 7
+> a*b          // 30
+> a/b          // 3
+> a%b          // 1
+> (a+b)/(b*b)  // 1
+> 
+> float x=2.5, y=4.0;
+> 
+> x/y          // 0.625
+> ```

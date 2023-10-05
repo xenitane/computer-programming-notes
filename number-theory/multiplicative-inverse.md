@@ -1,6 +1,6 @@
 Suppose we have two non-zero number `a` and `b`, such that $a*b=1$. Then it is said that `a` and `b` are multiplicative inverses of each other
 
-And for modulo `n` only natural number less than n are allowed, and the concept of additive inverses becomes $a*b\equiv1\bmod{n}\hspace{5mm}\{a,b\in\mathbb{Z}-\{0\}\}$.
+And for modulo `n` only natural number less than n are allowed, and the concept of multiplicative inverses becomes $a*b\equiv1\bmod{n}\hspace{5mm}\{a,b\in\mathbb{Z}-\{0\}\}$.
 
 > [!info] for a particular n, multiplicative inverse of all number do not exist.
  
@@ -46,5 +46,4 @@ And for large prime numbers like 1000000007 the exponent calculation can take a 
 \end{algorithmic}
 \end{algorithm} 
 ```
-
 [^1]: [binary exponentiation](../algorithms/bin-exp.md)

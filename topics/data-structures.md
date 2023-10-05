@@ -6,7 +6,6 @@ Data Structures are our custom made data types and to be able to use those types
 
 `class:multi-col-list`
 
-- [[../data-structures/array.md|Array]]
 - [[../data-structures/stack.md|Stack]]
 - [[../data-structures/queue.md|Queue]]
 - [[../data-structures/linked-list.md|Linked List]]

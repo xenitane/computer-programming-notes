@@ -127,6 +127,7 @@ arguments
 aware
 assigned
 assure
+accessed
 my
 mathematics
 more
@@ -210,6 +211,8 @@ maths
 moments
 magic
 maintain
+manage
+move
 notes
 needed
 not
@@ -240,6 +243,7 @@ nth
 nothing
 nums
 node
+null
 for
 from
 further
@@ -794,6 +798,8 @@ supplies
 stops
 stays
 surely
+second
+specify
 basics
 boring
 but
@@ -924,6 +930,7 @@ inserts
 issues
 inserted
 idea
+intact
 then
 the
 to
@@ -1079,6 +1086,7 @@ detailed
 discussed
 defining
 determining
+deallocated
 world
 which
 what
@@ -1415,6 +1423,8 @@ remove
 receives
 reduces
 recall
+resized
+resizing
 understanding
 us
 used
@@ -1492,6 +1502,7 @@ Extended
 Euclidean
 Encoding
 Equations
+Example
 Now
 Not
 Note
@@ -1696,6 +1707,8 @@ Space
 Same
 Save
 Some
+Syntax
+Static
 Open
 Operating
 Okay

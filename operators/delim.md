@@ -2,7 +2,7 @@ Okay, now that we have defined operations. We want to separate them out, we can 
 
 - **;** : semi-colon - used to denote the end of a statement.
 - **,** : coma - this operator has expressions on both its sides, first it evaluate the one on the left and then discards its value, then evaluates the expression on the right and return its type and value.
-- **:** : colon - the only use we need to consider now is that this is used to mark label names.
+- **:** : colon - the only use we need to consider now is that this is used to mark labels, cases in switch, second result for a ternary operation and setting length of bit fields.
 
 ```c
 statement1;
@@ -10,4 +10,8 @@ statement1;
 exp1, exp2, exp3;
 
 label_name:
+
+c?vt:vf;
+
+int z :4;
 ```

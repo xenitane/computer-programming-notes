@@ -4,13 +4,22 @@ It's general syntax goes like:
 ```c
 // for type definitions
 typedef definition identifier;
-// example
-typedef struct {int a, int b, int c} abc;
+```
 
+> [!example]+ Example
+> ```c
+> typedef struct {int a, int b, int c} abc;
+> ```
+
+
+```c
 // for aliasing
 typedef existing name identifier;
-// example
-typedef long long ll;
 ```
+
+> [!example]+ Example
+>```c
+> typedef long long ll;
+> ```
 
 > [!note] Only used for type definitions, can't be used for making short-hands for `else if` or other statements.

@@ -1,6 +1,6 @@
 Preprocessors are a part of `C/C++` syntax that are evaluated before main compilation process starts and serves various purposes which make programming easier for us. They are generally preceded by a #(hash) symbol.
 
-A detailed reference for them can be found _here[^1]_
+A detailed reference for them can be found _here^[https://en.cppreference.com/w/c/preprocessor]_
 
 We have a lot of preprocessors in the c language but these are the ones, which concern us the most:
 - ## Inclusion: (`#incldue`)
@@ -46,102 +46,102 @@ We have a lot of preprocessors in the c language but these are the ones, which c
 	```
 
 ---
-### Examples
-```c
-#include<stdio.h>
+> [!example]+ Examples
+> ```c
+> #include<stdio.h>
+> 
+> #define MOD 1000000009
+> 
+> #define lli long long int
+> 
+> int main(){
+> 	lli aa=0x100000000LL; // expands to -> long long int aa=0x100000000LL;
+> 	printf("%d\n",MOD); // expands to -> printf("%d\n",1000000009);
+> 	printf("%ld\n",aa);
+> 	return 0;
+> }
+> 
+> #undef MOD
+> ```
+> 
+> ```c
+> #define elif else if
+> ```
+> 
+> ```c
+> #include<stdio.h>
+> 
+> #define sqr(x) (x) * (x)
+> 
+> int main(){
+> 	int a=10;
+> 	int b=sqr(a); // expands to (a) * (a)
+> 	printf("%d\n",b);
+> 	return 0;
+> }
+> 
+> #undef sqr
+> ```
+> 
+> ```c
+> #include<stdio.h>
+> 
+> // making a debugger if the macro DEBUG is
+> // defined otherwise just an empty statement
+> #ifdef DEBUG
+> #define deb(x) fprintf(stderr, "%d\n", x)
+> #else
+> #define deb(...)
+> #endif
+> 
+> int main(){
+> 	int z=10;
+> 	deb(z);
+> 	/*
+> 	if DEBUG is defined the above statement expande to -> fprintf(stderr, "%d\n", z);
+> 	otherwise it expands to nothing and will be just an empty statement
+> 	*/
+> 	return 0;
+> }
+> ```
+> 
+> ```c
+> #define show_var_name(var) printf("%s",#var)
+> #define merge(a,b) a##b
+> 
+> int z=10;
+> show_var_name(z); // expands to printf("%s","z");
+> printf("=%d\n",z);
+> 
+> int hithere=0;
+> printf("%d\n",merge(hi,there)); // expands to printf("%d\n",hithere);
+> ```
+> 
+> Suppose you are making a header file, and you have defined something inside, so if someone accidentally includes it twice, there will be conflict of definitions, to avoid that we use conditionality too.
+> ```c
+> #ifndef _header_sign_
+> #define _header_sign_
+> /* below is the code for the header file
+> .
+> .
+> .
+> */
+> #endif
+> ```
+> 
+> ```c file:test.c
+> #include<assert.h>
+> #include<stdio.h>
+> 
+> int main(){
+> #line 732 "i_dont_know.c"
+> 	assert(1+1==3);
+> 	return 0;
+> }
+> /*
+> the output for this code is:
+> i_dont_know.c:732: main: Assertion `1 + 1 == 3' failed.
+> */
+> ```
 
-#define MOD 1000000009
 
-#define lli long long int
-
-int main(){
-	lli aa=0x100000000LL; // expands to -> long long int aa=0x100000000LL;
-	printf("%d\n",MOD); // expands to -> printf("%d\n",1000000009);
-	printf("%ld\n",aa);
-	return 0;
-}
-
-#undef MOD
-```
-
-```c
-#define elif else if
-```
-
-```c
-#include<stdio.h>
-
-#define sqr(x) (x) * (x)
-
-int main(){
-	int a=10;
-	int b=sqr(a); // expands to (a) * (a)
-	printf("%d\n",b);
-	return 0;
-}
-
-#undef sqr
-```
-
-```c
-#include<stdio.h>
-
-// making a debugger if the macro DEBUG is
-// defined otherwise just an empty statement
-#ifdef DEBUG
-#define deb(x) fprintf(stderr, "%d\n", x)
-#else
-#define deb(...)
-#endif
-
-int main(){
-	int z=10;
-	deb(z);
-	/*
-	if DEBUG is defined the above statement expande to -> fprintf(stderr, "%d\n", z);
-	otherwise it expands to nothing and will be just an empty statement
-	*/
-	return 0;
-}
-```
-
-```c
-#define show_var_name(var) printf("%s",#var)
-#define merge(a,b) a##b
-
-int z=10;
-show_var_name(z); // expands to printf("%s","z");
-printf("=%d\n",z);
-
-int hithere=0;
-printf("%d\n",merge(hi,there)); // expands to printf("%d\n",hithere);
-```
-
-Suppose you are making a header file, and you have defined something inside, so if someone accidentally includes it twice, there will be conflict of definitions, to avoid that we use conditionality too.
-```c
-#ifndef _header_sign_
-#define _header_sign_
-/* below is the code for the header file
-.
-.
-.
-*/
-#endif
-```
-
-```c file:test.c
-#include<assert.h>
-#include<stdio.h>
-
-int main(){
-#line 732 "i_dont_know.c"
-	assert(1+1==3);
-	return 0;
-}
-/*
-the output for this code is:
-i_dont_know.c:732: main: Assertion `1 + 1 == 3' failed.
-*/
-```
-
-[^1]: https://en.cppreference.com/w/c/preprocessor

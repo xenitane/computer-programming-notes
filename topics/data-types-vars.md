@@ -57,12 +57,11 @@ data_type list_name[/*optional_capcity*/] /* = { optional_list_of_elements_coma_
 
 > [!note] in case of hexadecimal number we can also use capital letters instead of small but it is considered good practice to stick with one throughout.
 
-example:
-
-| binary    | octal | decimal   | hexadecimal    |
-| :-------: | :-:   | :-------: | : -----------: |
-| 0b11001   | 031   | 25        | 0x19           |
-| 0b1000001 | 0101  | 65        | 0x41           |
+> [!Example]+ Examples
+> | binary    | octal | decimal   | hexadecimal    |
+> | :-------: | :-:   | :-------: | : -----------: |
+> | 0b11001   | 031   | 25        | 0x19           |
+> | 0b1000001 | 0101  | 65        | 0x41           |
 
 And that's not it, there are a lot more types we can create just by using collection of same type or different types we mentioned above and the types we created earlier. And these collections are called _data structures[^2]_. And we'll study them later in detail.
 

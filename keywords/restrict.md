@@ -1,0 +1,1 @@
+The `restrict` is usually used with pointers. And when a pointer is declared with a restrict qualifier in a block it is made sure that it can not be accessed and modified by any other means and only by that restrict pointer.

@@ -6,19 +6,19 @@ These operators are used to compare to values. And these are the comparative ope
 5. **>** : Greater Than - checks if the value of the left operand is greater than that of the one on the right
 6. **>=** : Greater Than Or Equal To - checks if the value of the left operand is greater than or equal to that of the one on the right
 
-## Examples
-```c
-int a=5, b=3, c=5, d=7;
+> [!example]+ Examples
+> ```c
+> int a=5, b=3, c=5, d=7;
+> 
+> a==c   // true
+> a!=b   // true
+> a>b    // true
+> a>=c   // true
+> a<d    // true
+> b<=c   // true  
+> ```
 
-a==c   // true
-a!=b   // true
-a>b    // true
-a>=c   // true
-a<d    // true
-b<=c   // true  
-```
-
-> [!info] A new comparison operator is now added in `C++` starting from the `C++20` standard called the three way comparison operator written as `<=>`.
+> [!info]+ A new comparison operator is now added in `C++` starting from the `C++20` standard called the three way comparison operator written as `<=>`.
 > ```cpp
 > a<=>b;
 > /*

@@ -18,22 +18,22 @@ These are the logical operators we have
 1. **<<** : left-shift - the bits are shifted to the left by the specified amount and the new bits that fill the right are zeros.
 2. **>>** : right-shift - the bits are shifted to the right by the specified amount and the new bits that fill the left are all same as the leftmost bit
 
-## Examples
-```c
-int a=5, b=12, c=0; // 5 (101), 12 (1100), 0 (0)
-
-a&b               // 4 (100)
-a|b               // 13 (1101)
-a^b               // 9 (1001)
-!a                // 0 (0)
-a&&b              // 1 (1)
-a&&c              // 0 (0)
-c||c              // 0 (0)
-a||c              // 1 (1)
-~c                // 0xffffffff (considering the size of int is 32 bits)
-a<<1              // 10 (1010)
-a>>1              // 2 (10)
-0x90000000 >> 2   // 0xe4000000
-```
+> [!example]+ Examples
+> ```c
+> int a=5, b=12, c=0; // 5 (101), 12 (1100), 0 (0)
+> 
+> a&b               // 4 (100)
+> a|b               // 13 (1101)
+> a^b               // 9 (1001)
+> !a                // 0 (0)
+> a&&b              // 1 (1)
+> a&&c              // 0 (0)
+> c||c              // 0 (0)
+> a||c              // 1 (1)
+> ~c                // 0xffffffff (considering the size of int is 32 bits)
+> a<<1              // 10 (1010)
+> a>>1              // 2 (10)
+> 0x90000000 >> 2   // 0xe4000000
+> ```
 
 > [!todo] I have written some numbers in a weird format, that's to save some space and time here, but fear not you'll understand once you cover how to represent numbers in different formats.
