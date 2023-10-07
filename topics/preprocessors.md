@@ -1,6 +1,6 @@
 Preprocessors are a part of `C/C++` syntax that are evaluated before main compilation process starts and serves various purposes which make programming easier for us. They are generally preceded by a #(hash) symbol.
 
-A detailed reference for them can be found _here^[https://en.cppreference.com/w/c/preprocessor]_
+A detailed reference for them can be found _here[^1]_
 
 We have a lot of preprocessors in the c language but these are the ones, which concern us the most:
 - ## Inclusion: (`#incldue`)
@@ -145,3 +145,4 @@ We have a lot of preprocessors in the c language but these are the ones, which c
 > ```
 
 
+[^1]: https://en.cppreference.com/w/c/preprocessor

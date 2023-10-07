@@ -11,8 +11,6 @@ Algorithms is a term used for sequence of steps or procedure used to solve a spe
 - [[../algorithms/max-sub-array|Maximum Subarray]]
 - [[../algorithms/bin-exp.md|Binary Exponentiation]]
 - [[../algorithms/fib-nums.md|Fibonacci Series]]
-- [[../algorithms/prime-test-factors.md|Prime Tests and Factorization]]
-- [[../algorithms/ext-euclid.md|Extended Euclidean]]
 - Permutation and Combination
 - Strassen's Matrix Multiplication
 - Searching

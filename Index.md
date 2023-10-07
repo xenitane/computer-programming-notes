@@ -12,7 +12,7 @@
 - [[./topics/operators.md|Operators]]
 - [[./topics/preprocessors.md|Preprocessors in C]]
 - [[./topics/keywords.md|Keywords]]
-- [[./topics/io|IO in C]]
+- [[./topics/io.md|IO in C]]
 - [[./topics/control-flow.md|Control Flow]]
 - [[../topics/memory.md|Memory]]
 - [[../topics/complexity.md|Complexity Analysis]]

@@ -17,12 +17,12 @@ Notation: $(number)_{base}$
 examples: $(25)_{10}=(11001)_2=(31)_8=(19)_{16}={Z}_{64}$
 
 So, for any number N in base b, $N=(N_kN_{k-1}\dots N_2N_1N_0)_b\hspace{5mm}\{N_i\in\{0 \dots (b-1)\}\}$. And N is consolidated as $N=\sum^{k}_{i=0}b^i*N_i$.
-So to find N<sub>k</sub> for any N in base `b` the expression is: $N_k=\lfloor\frac{(N\bmod b^{k+1})}{b^k}\rfloor$.
+So to find N<sub>k</sub> for any N in base `b` the expression is: $N_k=\left\lfloor\dfrac{N}{b^k}\right\rfloor\bmod{b}$.
 
 To find the representation of a number `N` in base `b` let's do the _complexity analysis[^1]_:
 
-Let's say number of digits in the base `b` representation of `N` are `k`, $k>0, b>1, N\geq 0$ and for no leading zeros, k is smallest and  $\cfrac{N}{b^k}\leq1$  holds true 
-$$\implies N\leq b^k \implies log_b(N)\leq k \text{ (applying log on both sides)}$$
+Let's say number of digits in the base `b` representation of `N` are `k`, $k>0, b>1, N\geq 0$ and for no leading zeros, k is smallest and  $\cfrac{N}{b^k}<1$  holds true 
+$$\implies N < b^{k} \implies log_{b(N)} < k \text{ (applying log on both sides)}$$
 $$\text{as }log_b(N)=\frac{log_2(N)}{log_2(b)}=c*log_2(N)\implies k=\Omega(log_2(N))$$
 
 [^1]: [complexity analysis](../topics/complexity.md)

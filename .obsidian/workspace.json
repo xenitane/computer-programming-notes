@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "a8c7573fb38dd6d4",
+        "id": "42b627c76832c4a2",
         "type": "tabs",
         "children": [
           {
-            "id": "667cff6476e583ad",
+            "id": "fd840ec321e60796",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "number-theory/number-systems.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -65,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "64efa7548073aac2",
@@ -82,6 +86,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "number-theory/number-systems.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -113,13 +118,21 @@
               "type": "mermaid-toolbar-view",
               "state": {}
             }
+          },
+          {
+            "id": "afc5e3298c1c40d7",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -137,6 +150,6 @@
       "html-server:Turn Http Server Off": false
     }
   },
-  "active": "6416550974ed1271",
+  "active": "fd840ec321e60796",
   "lastOpenFiles": []
 }

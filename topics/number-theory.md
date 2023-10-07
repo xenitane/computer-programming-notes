@@ -5,5 +5,8 @@ Computers, these fancy calculators, have to deal with a lot of numbers, so need 
 
 - [[../number-theory/number-systems.md|Number Systems]]
 - [[../number-theory/modulo-arithmetic.md|Modulo Arithmetic]]
+- [[../algorithms/prime-test-factors.md|Prime Test and Factorization]]
+
+
 
 [^1]: [data types](data-types-vars.md)

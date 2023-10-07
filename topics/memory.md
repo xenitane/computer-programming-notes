@@ -67,7 +67,7 @@ arr[idx]; // one way to access the element at index idx
 > [!caution]+ And as arrays are just block in memory which we are accessing directly we can also access element that lie outside of the allocated size cause again just memory addresses are being used here.
 > ```c
 > int arr[2];
-> arr[2]=12;
+> arr[2]=12; // this lies outside of the block we allocated for the array
 > ```
 
 

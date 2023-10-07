@@ -1,0 +1,4 @@
+table tbody tr td:nth-child(n+3){
+   writing-mode: vertical-rl; /* For modern browsers */
+  transform: rotate(0deg);
+}

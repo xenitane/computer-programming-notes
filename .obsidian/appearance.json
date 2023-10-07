@@ -5,6 +5,7 @@
   "theme": "obsidian",
   "nativeMenus": false,
   "enabledCssSnippets": [
-    "list-format"
+    "list-format",
+    "table-vertical-cell"
   ]
 }
