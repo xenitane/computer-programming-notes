@@ -19,184 +19,150 @@ And a queue has some properties and functions:
 
 
 
-now let's implement a stack:
+now let's implement a queue:
 
 ```c
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<assert.h>
-
-typedef struct{
-	const long long int MAX_CAPACITY;
-	long long int back;
-	long long int front;
+#ifndef _C_QUEUE_H_
+#define _C_QUEUE_H_
+typedef struct queue_str {
+	const size_t MAX_CAP;
+	size_t size;
+	size_t front;
 	int *data;
-}queue;
+} queue_t;
+typedef queue_t* queue;
 
-queue* init_queue(long long int);
-long long int size(queue*);
-void push(queue*,int);
-bool empty(queue*);
-void pop(queue*);
-int front(queue*);
-free_queue(queue*);
-
-int main(){
-	queue*myQueue=init_queue(10000);
-	// now we can do whatever we want with our stack
-	free_queue(myQueue);
-	return 0;
-}
-
-queue* init_queue(long long int MAX_CAP){
-	assert(MAX_CAP>=0);
-	queue* res=NULL;
-	while(res==NULL)
-		res=(stack*)calloc(1,sizeof(stack));
-	*((int*)&res->MAX_CAPACITY)=MAX_CAP;
-	res->back=-1;
-	res->front=0;
-	res->data=NULL;
-	while(res->data==NULL)
-		res->data=(int*)calloc(MAX_CAP,sizeof(int));
+queue create_queue(size_t mcap){
+	queue res = NULL;
+	while(!res)
+		res = (queue)calloc(1, sizeof(queue_t));
+	*(size_t*)&(res->MAX_CAP) = mcap;
+	res->front = 0;
+	res->size = 0;
+	res->data = NULL;
+	while(!(res->data))
+		res->data=(int*)calloc(mcap,sizeof(int));
 	return res;
 }
-// #2196F3
-// 33 150 243
-long long int size(queue*q){
-	long long int sz=q->back-q->front;
-	if(sz<0)
-		sz+=q->MAX_CAPACITY;
-	return sz;
+
+void push(queue q, int val){
+	assert(q->size < q->MAX_CAP);
+	q->data[q->front + q->size++] = val;
 }
 
-void push(queue*q,int val){
-	assert(size(q)<q->MAX_CAPACITY);
-	q->data[q->back++]=val;
-	q->back%=q->MAX_CAPACITY;
+void pop(queue q){
+	assert(q->size > 0);
+	q->front++;
+	q->front %= q->MAX_CAP;
 }
 
-bool empty(queue*q){
-	return q->front==q->back;
+int empty(queue q){
+	return q->size == 0;
 }
 
-void pop(queue*q){
-	assert(!empty(q));
-	q->front=(q->front+1)%s->MAX_CAPACITY;
+size_t size(queue q){
+	return q->size;
 }
 
-int front(queue*q){
-	assert(!empty(q));
+int front(queue q){
+	assert(q->size > 0);
 	return q->data[q->front];
 }
 
-void free_queue(queue*q){
-	assert(q!=NULL)
+void free_queue(queue q){
 	free(q->data);
 	free(q);
 }
 
+#endif
 ```
 
-> Note: The reason we are using the `assert` function here is to disallow undefined behaviour like trying to pop or view the top value in an empty stack, pushing something in an already full stack. If `assert` receives a zero value or `false` it stops the execution of the program and exits it.
+> [!note] The reason we are using the `assert` function here is to disallow undefined behaviour like trying to pop or view the top value in an empty stack, pushing something in an already full stack. If `assert` receives a zero value or `false` it stops the execution of the program and exits it.
 
 Now there is one more stack where you don't have to worry about the max capacity, would you like to take a look into it.
 
-Well instead of `MAX_CAPACITY` we just use `capacity` and when we reach that capacity we just double the size of the data array and when we reach below half the capacity we half the size of data array and all this takes is a call to the `realloc` function. [reference](../topics/memory.md)
+For this we first need to learn about linked lists as they are going to be essential for making dynamic sized queues. 
 
 Here it goes:
 
 ```c
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<assert.h>
+#ifndef _C_QUEUE_H_
+#define _C_QUEUE_H_
 
-typedef struct{
-	long long int capacity;
-	long long int back;
-	long long int front;
-	int *data;
-}queue;
+typedef struct queue_node_str {
+	int data;
+	struct queue_node_str *next; 
+} node_t;
+typedef queue_node_t* queue_node;
 
-queue* init_queue();
-long long int size(queue*);
-void push(queue*,int);
-bool empty(queue*);
-void pop(queue*);
-int front(queue*);
-free_queue(queue*);
+typedef struct queue_str {
+	queue_node front;
+	queue_node back;
+	size_t size;
+} queue_t;
+typedef queue_t* queue;
 
-int main(){
-	queue*myQueue=init_queue();
-	// now we can do whatever we want with our stack
-	free_queue(myQueue);
-	return 0;
-}
-
-queue* init_queue(){
-	stack* res=NULL;
-	while(res==NULL)
-		res=(stack*)calloc(1,sizeof(stack));
-	res->capacity=1;
-	res->back=0;
-	res->front=0;
-	res->data=NULL;
-	while(res->data==NULL)
-		res->data=(int*)calloc(1,sizeof(int));
+queue_node create_queue_node(int val){
+	queue_node res = NULL;
+	while(!res)
+		res = (queue_node)calloc(1, sizeof(queue_node_t));
+	res->data = val;
+	res->next = NULL;
 	return res;
 }
 
-long long int size(queue*q){
-	return q->back-q->front;
+queue create_queue(){
+	queue res=NULL;
+	while(!res)
+		res = (queue)calloc(1, sizeof(queue_t));
+	res->first = NULL;
+	res->last = NULL;
+	res->size = 0;
+	return q;
 }
 
-void push(queue*q,int val){
-	q->data[q->back++]=val;
-	if(sise(q)==q->capacity){
-		long long int ncap=capacity*2;
-		int*dres=NULL;
-		while(dres==NULL)
-			dres=(int*)realloc(q->data,ncap);
-		q->capacity=ncap;
-		q->data=dres;
+void push(queue q, int val){
+	queue_node qn=create_queue_node(val);
+	if(!q->first){
+		q->first = qn;
+		q->last = qn;
+	}else{
+		q->last->next = qn;
+		q->last = qn;
 	}
+	q->size++;
 }
 
-bool empty(queue*q){
-	return q->back==q->front;
+void pop(queue q){
+	assert(q->front != NULL);
+	queue_node tmp = q->front;
+	q->front = tmp->next;
+	if(q->front == NULL)
+		q->back = NULL;
+	free(tmp);
+	q->size--;
 }
 
-void pop(queue*q){
-	assert(!empty(q));
-	q->front++;
-	long long int sz=q->front;
-	if(sz>1&&sz<=s->capacity/2){
-		long long int ncap=q->capacity-sz;
-		int*dres=NULL;
-		while(dres==NULL)
-			dres=(int*)calloc(ncap,sizeof(int));
-		for(int i=0;i<ncap;i++)
-			dres[i]=q->data[i+sz];
-		q->back-=sz, q->front=0;
-		free(q->data);
-		q->data=dres;
-	}
+size_t size(queue q){
+	return q->size;
 }
 
-int front(queue*q){
-	assert(!empty(q));
-	return q->data[q->front];
+int front(queue q){
+	return q->front->data;
 }
 
-void free_queue(queue*q){
-	assert(q!=NULL);
-	free(q->data);
+int empty(queue q){
+	return q->size == 0;
+}
+
+void free_queue(queue q){
+	while(q->front != NULL)
+		pop(q);
 	free(q);
 }
+#endif
 ```
 
-> Note: in both pieces of codes above, there are places where you'll see [conditions](../control-flow/conditionality.md), [while loops](../control-flow/loops.md), asserts, temporary [variables](../topics/data-types-vars.md) , [memory management](../topics/memory.md) etc, they are there to make sure the tasks are executed without any issues.
+> [!note] in both pieces of codes above, there are places where you'll see [conditions](../control-flow/conditionality.md), [while loops](../control-flow/loops.md), asserts, temporary [variables](../topics/data-types-vars.md) , [memory management](../topics/memory.md) etc, they are there to make sure the tasks are executed without any issues.
 > 
 > Try to think what those issues can possibly be.

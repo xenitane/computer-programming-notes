@@ -1,4 +1,4 @@
-Now that we are running a program, we want to be able to give input to our program and receive an output from it, right? So for that we need the I/O and in C, it's implementation is below:
+Now that we are running a program, we want to be able to give input to our program and receive an output from it, right? So for that we need the I/O and in C, the functions we are going to use for I/O are defined in the `stdio.h` header file, and below is how to use them:
 
 ## Input
 To take input from console, _`scanf` and variants[^1]_
@@ -9,11 +9,11 @@ To take input from console, _`scanf` and variants[^1]_
 
 The **format** string consists of
 
-- non-whitespace multibyte characters except %: each such character in the format string consumes exactly one identical character from the input stream, or causes the function to fail if the next character on the stream does not compare equal.
-- whitespace characters: any single whitespace character in the format string consumes all available consecutive whitespace characters from the input (determined as if by calling [isspace](https://en.cppreference.com/w/c/string/byte/isspace "c/string/byte/isspace") in a loop). Note that there is no difference between "\\n", " ", "\\t\\t", or other whitespace in the format string.
+- non-white-space multi-byte characters except %: each such character in the format string consumes exactly one identical character from the input stream, or causes the function to fail if the next character on the stream does not compare equal.
+- white-space characters: any single white-space character in the format string consumes all available consecutive white-space characters from the input (determined as if by calling `isspace` in a loop). Note that there is no difference between "\\n", " ", "\\t\\t", or other white-space in the format string.
 - conversion specifications. Each conversion specification has the following format:
 
-- introductory % character.
+- introductory **`%`** character.
 
 - (optional) assignment-suppressing character *. If this option is present, the function does not assign the result of the conversion to any receiving argument.
 
@@ -23,6 +23,10 @@ The **format** string consists of
 
 - conversion format specifier.
 
+<hr width="80%" style="margin-left:auto;margin-right:auto" >
+
+`class:table-ver-cell`
+
 -tx-
 |Conversion specifier | Explanation | Argument Type |||||||||
 |Length Modifier –>||hh|h|(none)|l|ll|j|z|t|L|
@@ -31,7 +35,7 @@ The **format** string consists of
 |c|Matches a **character** or a sequence of **characters**.<br><br>If a width specifier is used, matches exactly _width_ characters (the argument must be a pointer to an array with sufficient room). Unlike %s and %\[, does not append the null character to the array.|N/A|N/A|_char*_|_wchar_t*_|N/A|N/A|N/A|N/A|N/A|
 |s|Matches a sequence of non-whitespace characters (a **string**).<br><br>If width specifier is used, matches up to _width_ or until the first whitespace character, whichever appears first. Always stores a null character in addition to the characters matched (so the argument array must have room for at least _width+1_ characters)|^^|^^|^^|^^|^^|^^|^^|^^|^^|
 |\[set\]|Matches a non-empty sequence of character from set of characters.<br><br>If the first character of the set is **`^`**, then all characters not in the set are matched. If the set begins with **`]`** or **`^]`** then the **`]`** character is also included into the set. It is implementation-defined whether the character **`-`** in the non-initial position in the scanset may be indicating a range, as in **`[0-9]`**. If width specifier is used, matches only up to _width_. Always stores a null character in addition to the characters matched (so the argument array must have room for at least _width+1_ characters)|^^|^^|^^|^^|^^|^^|^^|^^|^^|
-|d|Matches a **decimal integer**.<br><br>The format of the number is the same as expected by [strtol](https://en.cppreference.com/w/c/string/byte/strtol "c/string/byte/strtol") with the value 10 for the `base` argument|_signed char*_ or _unsigned char*_|_signed short*_ or _unsigned short*_|_signed int*_ or _unsigned int*_|_signed long*_ or _unsigned long*_|_signed long long*_ or _unsigned long long*_|_intmax_t*_ or _uintmax_t*_|_size_t*_|_ptrdiff_t*_|N/A|
+|d|Matches a **decimal integer**.<br><br>The format of the number is the same as expected by `strtol` with the value 10 for the `base` argument|_signed char*_ or _unsigned char*_|_signed short*_ or _unsigned short*_|_signed int*_ or _unsigned int*_|_signed long*_ or _unsigned long*_|_signed long long*_ or _unsigned long long*_|_intmax_t*_ or _uintmax_t*_|_size_t*_|_ptrdiff_t*_|N/A|
 |i|Matches an **integer**.<br><br>The format of the number is the same as expected by _strtol_ with the value ​0​ for the `base` argument (base is determined by the first characters parsed)|^^|^^|^^|^^|^^|^^|^^|^^|^^|
 |u|Matches an unsigned **decimal integer**.<br><br>The format of the number is the same as expected by _strtoul_ with the value 10 for the `base` argument.|^^|^^|^^|^^|^^|^^|^^|^^|^^|
 |o|Matches an unsigned **octal integer**.<br><br>The format of the number is the same as expected by _strtoul_ with the value 8 for the `base` argument|^^|^^|^^|^^|^^|^^|^^|^^|^^|
@@ -40,6 +44,7 @@ The **format** string consists of
 |a,A,e,E,<br>f,F,g,G|Matches a **floating-point number**.<br><br>The format of the number is the same as expected by _strtof_|N/A|N/A|_float*_|_double*_|N/A|N/A|N/A|N/A|_long double*_|
 |p|Matches implementation defined character sequence defining a **pointer**.<br><br>`printf` family of functions should produce the same sequence using **`%p`** format specifier| N/A|N/A|_void**_|N/A|N/A|N/A|N/A|N/A|N/A|
 [Conversion Format Specifier table for `scanf`]
+
 
 > [!example]+ Examples
 > ```c
@@ -83,33 +88,39 @@ The **format** string consists of
 > ```
 
 
+---
 ## Output
 To print output to the console, _`printf` and variants[^2]_
   All the functions below are used to put data from the variables we pass into them and feed it into a reservoir as per the usage goes. The return the number of characters they have sent to the output.
 1. `printf(const char*restrict __fmt, values_of_variables)`: this function prints data to `stdout` in the specified format and replaces the string literals with the values of variables passed in the respective order.
 2. `sprintf(const char*restrict __d, const char*restrict __fmt, values_of_variables)`: prints to the given character buffer in `__d` and the rest is same as `printf`.
-3. `snprintf(const char*restrict __d, unsigned long __maxlen, const char*restrict __fmt, values_of_variables)`: this is a small variation of the `sprintf` function. It prints into `__d` up-to only `__maxlen` characters but return the length of complete possible output.
+3. `snprintf(const char*restrict __d, unsigned long __maxlen, const char*restrict __fmt, values_of_variables)`: this is a small variation of the `sprintf` function. It prints into `__d` up-to only `__maxlen` characters but return the length of complete possible output, it is generally used to determine the size of buffers needed to print certain information.
 4. `fprintf(FILE*restrict __file, const char*restrict __fmt, values_of_variables)`: the same as `printf`, the only difference is that it prints to the file specified by the FILE pointer.
 
-The **format** string consists of ordinary byte characters (except `**%**`), which are copied unchanged into the output stream, and conversion specifications. Each conversion specification has the following format:
+The **format** string consists of ordinary byte characters (except **`%`**), which are copied unchanged into the output stream, and conversion specifications. Each conversion specification has the following format:
 
-- introductory `**%**` character.
+- introductory **`%`** character.
 
 - (optional) one or more flags that modify the behavior of the conversion:
 
-- `**-**`: the result of the conversion is left-justified within the field (by default it is right-justified).
-- `**+**`: the sign of signed conversions is always prepended to the result of the conversion (by default the result is preceded by minus only when it is negative).
-- _space_: if the result of a signed conversion does not start with a sign character, or is empty, space is prepended to the result. It is ignored if `+` flag is present.
-- `**#**`: _alternative form_ of the conversion is performed. See the table below for exact effects otherwise the behavior is undefined.
-- `**0**`: for integer and floating point number conversions, leading zeros are used to pad the field instead of _space_ characters. For integer numbers it is ignored if the precision is explicitly specified. For other conversions using this flag results in undefined behavior. It is ignored if `-` flag is present.
+- **`-`** : the result of the conversion is left-justified within the field (by default it is right-justified).
+- **`+`** : the sign of signed conversions is always prepended to the result of the conversion (by default the result is preceded by minus only when it is negative).
+- _space_ : if the result of a signed conversion does not start with a sign character, or is empty, space is prepended to the result. It is ignored if `+` flag is present.
+- **`#`** : _alternative form_ of the conversion is performed. See the table below for exact effects otherwise the behavior is undefined.
+- **`0`** : for integer and floating point number conversions, leading zeros are used to pad the field instead of _space_ characters. For integer numbers it is ignored if the precision is explicitly specified. For other conversions using this flag results in undefined behavior. It is ignored if `-` flag is present.
 
 - (optional) integer value or `*` that specifies minimum field width. The result is padded with _space_ characters (by default), if required, on the left when right-justified, or on the right if left-justified. In the case when `*` is used, the width is specified by an additional argument of type int, which appears before the argument to be converted and the argument supplying precision if one is supplied. If the value of the argument is negative, it results with the `-` flag specified and positive field width (Note: This is the minimum width: The value is never truncated.).
 
-- (optional) `**.**` followed by integer number or `*****`, or neither that specifies _precision_ of the conversion. In the case when `*` is used, the _precision_ is specified by an additional argument of type int, which appears before the argument to be converted, but after the argument supplying minimum field width if one is supplied. If the value of this argument is negative, it is ignored. If neither a number nor `*****` is used, the precision is taken as zero. See the table below for exact effects of _precision_.
+- (optional) **`.`** followed by integer number or **`*`**, or neither that specifies _precision_ of the conversion. In the case when **`*`** is used, the _precision_ is specified by an additional argument of type int, which appears before the argument to be converted, but after the argument supplying minimum field width if one is supplied. If the value of this argument is negative, it is ignored. If neither a number nor **`*`** is used, the precision is taken as zero. See the table below for exact effects of _precision_.
 
 - (optional) _length modifier_ that specifies the size of the argument (in combination with the conversion format specifier, it specifies the type of the corresponding argument).
 
 - conversion format specifier.
+
+<hr width="80%" style="margin-left:auto;margin-right:auto" >
+
+`class:table-ver-cell` 
+
 
 -tx-
 |Conversion specifier | Explanation | Argument Type |||||||||
@@ -120,7 +131,7 @@ The **format** string consists of ordinary byte characters (except `**%**`), 
 |s|Writes a **character string**<br><br>The argument must be a pointer to the initial element of an array of characters. _Precision_ specifies the maximum number of bytes to be written. If _Precision_ is not specified, writes every byte up to and not including the first null terminator. If the **l** specifier is used, the argument must be a pointer to the initial element of an array of wchar_t, which is converted to char array as if by a call to _wcrtomb_ with zero-initialized conversion state.|^^|^^|_char*_|_wchar_t*_|^^|^^|^^|^^|^^|
 |d<br>i|Converts a **signed integer** into decimal representation _[-]dddd_.<br><br>_Precision_ specifies the minimum number of digits to appear. The default precision is 1.<br><br>If both the converted value and the precision are ​0​ the conversion results in no characters.|_signed char_|_short_|_int_|_long_|_long long_|_intmax_t_|_signed size_t_|_ptrdiff_t_|N/A|
 |o|Converts an **unsigned integer** into octal representation _oooo_.<br>_Precision_ specifies the minimum number of digits to appear. The default precision is 1. If both the converted value and the precision are ​0​ the conversion results in no characters. In the _alternative implementation_ precision is increased if necessary, to write one leading zero. In that case if both the converted value and the precision are ​0​, single ​0​ is written.|_unsigned char_|_unsigned short_|_unsigned int_|_unsigned long_|_unsigned long long_|_uintmax_t_|_size_t_|unsigned version of _ptrdiff_t_|N/A|
-|x<br>X|Converts an **unsigned integer** into hexadecimal representation _hhhh_.<br><br>For the `**x**` conversion letters `abcdef` are used. <br>For the `**X**` conversion letters `ABCDEF` are used.<br>_Precision_ specifies the minimum number of digits to appear. The default precision is 1. If both the converted value and the precision are ​0​ the conversion results in no characters. In the _alternative implementation_ `**0x**` or `**0X**` is prefixed to results if the converted value is nonzero.|^^|^^|^^|^^|^^|^^|^^|^^|^^|
+|x<br>X|Converts an **unsigned integer** into hexadecimal representation _hhhh_.<br><br>For the **`x`** conversion letters `abcdef` are used. <br>For the **`X`** conversion letters `ABCDEF` are used.<br>_Precision_ specifies the minimum number of digits to appear. The default precision is 1. If both the converted value and the precision are ​0​ the conversion results in no characters. In the _alternative implementation_ **`0x`** or **`0X`** is prefixed to results if the converted value is nonzero.|^^|^^|^^|^^|^^|^^|^^|^^|^^|
 |u|Converts an **unsigned integer** into decimal representation _dddd_.<br><br>_Precision_ specifies the minimum number of digits to appear. The default precision is 1. If both the converted value and the precision are ​0​ the conversion results in no characters.|^^|^^|^^|^^|^^|^^|^^|^^|^^|
 |f<br>F|Converts **floating-point number** to the decimal notation in the style _[-]ddd.ddd_.<br><br>_Precision_ specifies the exact number of digits to appear after the decimal point character. The default precision is 6. In the _alternative implementation_ decimal point character is written even if no digits follow it. For infinity and not-a-number conversion style see notes.|N/A|N/A|_double_|_double_|N/A|N/A|N/A|N/A|_long double_|
 |e<br>E|Converts **floating-point number** to the decimal exponent notation.<br><br>For the **`e`** conversion style _[-]d.ddd_**`e`**_±dd_ is used.<br>For the **`E`** conversion style _[-]d.ddd_**`E`**_±dd_ is used.<br>The exponent contains at least two digits, more digits are used only if necessary. If the value is ​0​, the exponent is also ​0​. _Precision_ specifies the exact number of digits to appear after the decimal point character. The default precision is 6. In the _alternative implementation_ decimal point character is written even if no digits follow it. For infinity and not-a-number conversion style see notes.|^^|^^|^^|^^|^^|^^|^^|^^|^^|

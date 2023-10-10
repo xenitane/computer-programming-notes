@@ -58,6 +58,7 @@ data_type list_name[/*optional_capcity*/] /* = { optional_list_of_elements_coma_
 > [!note] in case of hexadecimal number we can also use capital letters instead of small but it is considered good practice to stick with one throughout.
 
 > [!Example]+ Examples
+> 
 > | binary    | octal | decimal   | hexadecimal    |
 > | :-------: | :-:   | :-------: | : -----------: |
 > | 0b11001   | 031   | 25        | 0x19           |

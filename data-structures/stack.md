@@ -21,79 +21,61 @@ And a stack has some properties and functions:
 now let's implement a stack:
 
 ```c
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<assert.h>
+#ifndef _C_STACK_H_
+#define _C_STACK_H_
 
-typedef struct{
-	const long long int MAX_CAPACITY;
-	long long int pos;
+typedef struct stack_str {
+	const size_t MAX_CAP;
+	size_t pos;
 	int *data;
-}stack;
+} stack_t;
+typedef stack_t* stack;
 
-stack*init_stack(long long int);
-void push(stack*,int);
-void pop(stack*);
-bool empty(stack*);
-long long int size(stack*);
-void free_stack(stack*);
-
-
-int main(){
-	stack*myStack=init_stack(10000);
-	// now we can do whatever we want with our stack
-	free_stack(myStack);
-	return 0;
-}
-
-stack* init_stack(long long int MAX_CAP){
-	assert(MAX_CAP>=0);
-	stack* res=NULL;
+stack create_stack(int mcap){
+	assert(mcap > 0);
+	stack res = NULL;
 	while(!res)
-		res=(stack*)calloc(1,sizeof(stack));
-	*((int*)&res->MAX_CAPACITY)=MAX_CAP;
-	res->pos=-1;
-	res->data=NULL;
-	while(!res->data)
-		res->data=(int*)calloc(MAX_CAP,sizeof(int));
+		res = (stack)calloc(1, sizeof(stack_t));
+	*(int*)&(res->MAX_CAP) = mcap;
+	res->data = NULL:
+	while(!(res->data))
+		res->data = (int*)calloc(mcap, sizeof(int));
+	res->pos = 0;
 	return res;
 }
 
-void push(stack*s,int val){
-	assert(s!=NULL);
-	assert(s->pos+1<s->MAX_CAPACITY);
-	s->data[++(s->pos)]=val;
+void push(stack s, int val){
+	assert(s->pos < s->MAX_CAP);
+	s->data[s->pos++] = val;
 }
 
-bool empty(stack*s){
-	assert(s!=NULL);
-	return s->pos<0;
-}
-
-void pop(stack*s){
-	assert(!empty(s));
+void pop(stack s){
+	assert(s->pos > 0);
 	s->pos--;
 }
 
-int top(stack*s){
-	assert(!empty(s));
-	return s->data[s->pos];
+int top(stack s){
+	assert(s->pos > 0);
+	return s->data[s->pos - 1];
 }
 
-long long int size(stack*s){
-	assert(s!=NULL);
-	return s->pos+1;
+size_t size(stack s){
+	return s->pos;
 }
 
-void free_stack(stack*s){
-	assert(s!=NULL);
+int empty(stack s){
+	return s->pos == 0;
+}
+
+void free_stack(stack s){
 	free(s->data);
 	free(s);
 }
+
+#endif
 ```
 
-> Note: The reason we are using the `assert` function here is to disallow undefined behaviour like trying to pop or view the top value in an empty stack, pushing something in an already full stack. If `assert` receives a zero value or `false` it stops the execution of the program and exits it.
+> Note: The reason we are using the `assert` function here is to disallow undefined behavior like trying to pop or view the top value in an empty stack, pushing something in an already full stack. If `assert` receives a zero or `false` value it stops the execution of the program and exits it.
 
 Now there is one more stack where you don't have to worry about the max capacity, would you like to take a look into it.
 
@@ -102,87 +84,70 @@ Well instead of `MAX_CAPACITY` we just use `capacity` and when we reach that cap
 Here it goes:
 
 ```c
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<assert.h>
+#ifndef _C_STACK_H_
+#define _C_STACK_H_
 
-typedef struct{
-	long long int capacity;
-	long long int pos;
+typedef struct stack_str {
+	size_t capacity;
+	size_t pos;
 	int *data;
-}stack;
+} stack_t;
+typedef stack_t* stack;
 
-stack*init_stack();
-void push(stack*,int);
-void pop(stack*);
-bool empty(stack*);
-long long int size(stack*);
-void free_stack(stack*);
-
-int main(){
-	stack*myStack=init_stack();
-	// now we can do whatever we want with our stack
-	free_stack(myStack);
-	return 0;
-}
-
-stack* init_stack(){
-	stack* res=NULL;
-	while(res==NULL)
-		res=(stack*)calloc(1,sizeof(stack));
-	res->capacity=1;
-	res->pos=-1;
-	res->data=NULL;
-	while(res->data==NULL)
-		res->data=(int*)calloc(1,sizeof(int));
+stack create_stack(){
+	stack res = NULL;
+	while(!res)
+		res = (stack)calloc(1, sizeof(stack_t));
+	res->capacity = 1;
+	res->pos = 0;
+	res->data = NULL;
+	while(!(res->data))
+		res->data = (int*)calloc(1, sizeof(int));
 	return res;
 }
 
-void push(stack*s,int val){
-	assert(s!=NULL);
-	s->data[++(s->pos)]=val;
-	if(s->pos+1==s->capacity){
-		long long int ncap=s->capacity*2;
-		int *dres=NULL
-		while(dres==NULL)
-			dres=(int*)realloc(s->data,ncap);
-		s->capacity=ncap;
-		s->data=dres;
+void push(stack s, int val){
+	s->data[s->pos++] = val;
+	if(s->val == s->capacity){
+		int *new_data = NULL;
+		while(!new_data)
+			new_data = (int*)realloc(s->data, 2 * s->capacity);
+		s->data = new_data;
+		s->capacity *= 2;
 	}
 }
 
-bool empty(stack*s){
-	return s->pos<0;
-}
-
-void pop(stack*s){
-	assert(!empty(s));
+void pop(stack s){
+	assert(s->pos > 0);
 	s->pos--;
-	if(s->pos>=0 && (s.pos+1)*2<=s->capacity){
-		long long int ncap=s->capacity/2;
-		int *dres=NULL;
-		while(dres==NULL)
-			dres=(int*)realloc(s->data,ncap);
-		s->capacity=ncap;
-		s->data=dres;
+	if((2 * s->pos) == s->capacity){
+		int *new_data = NULL;
+		while(!new_data)
+			new_data = (int*)realloc(s->data, s->capacity / 2);
+		s->data = new_data;
+		s->capacity /= 2;
 	}
 }
 
-int top(stack*s){
-	assert(!empty(s));
-	return s->data[s->pos];
+void top(stack s){
+	assert(s->pos > 0);
+	return s->data[s->pos - 1];
 }
 
-long long int size(stack*s){
-	return s->pos+1;
+size_t size(stack s){
+	return s->pos;
 }
 
-void free_stack(stack*s){
-	assert(s!=null);
+int empty(stack s){
+	return s->pos == 0;
+}
+
+void free_stack(stack s){
 	free(s->data);
 	free(s);
 }
+
+#endif
 ```
 
 > Note: in both pieces of codes above, there are places where you'll see [conditions](../control-flow/conditionality.md), [while loops](../control-flow/loops.md), assertions, temporary [variables](../topics/data-types-vars.md) , [memory management](../topics/memory.md) etc, they are there to make sure the tasks are executed without any issues.

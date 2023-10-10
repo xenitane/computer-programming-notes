@@ -7,6 +7,7 @@
 `class:multi-col-list`
 
 - [[./topics/c-basics.md|Intro to C-Language]]
+- [[./topics/headers.md|Essential Header Files]]
 - [[./topics/data-types-vars.md|Data Types and Variables]]
 - [[./topics/scope.md|Scope]]
 - [[./topics/operators.md|Operators]]

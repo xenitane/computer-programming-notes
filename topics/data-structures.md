@@ -8,10 +8,10 @@ Data Structures are our custom made data types and to be able to use those types
 
 - [[../data-structures/stack.md|Stack]]
 - [[../data-structures/queue.md|Queue]]
+- [[../data-structures/deque.md|Deque]]
 - [[../data-structures/linked-list.md|Linked List]]
-- [[../data-structures/heap.md|Heap]]
 - Binary Tree
-- Deque
+- [[../data-structures/heap.md|Heap]]
 - Binary Search Tree
 - Self-Balancing Binary Search Tree
 - Hash Tables

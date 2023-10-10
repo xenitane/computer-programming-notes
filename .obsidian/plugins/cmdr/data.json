@@ -12,8 +12,23 @@
   "macros": [],
   "explorer": [],
   "hide": {
-    "statusbar": [],
-    "leftRibbon": []
+    "statusbar": [
+      "word-count"
+    ],
+    "leftRibbon": [
+      "Turn Http Server Off",
+      "Turn Http Server On",
+      "Open command palette",
+      "Create new canvas",
+      "Open quick switcher",
+      "Rich Links",
+      "Open graph view",
+      "Advanced Tables Toolbar",
+      "Open homepage",
+      "Open Mathpad",
+      "Open Mermaid Toolbar",
+      "Omnisearch"
+    ]
   },
   "spacing": 8,
   "advancedToolbar": {

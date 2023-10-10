@@ -4,8 +4,8 @@ Computers, these fancy calculators, have to deal with a lot of numbers, so need 
 `class:multi-col-list`
 
 - [[../number-theory/number-systems.md|Number Systems]]
-- [[../number-theory/modulo-arithmetic.md|Modulo Arithmetic]]
 - [[../algorithms/prime-test-factors.md|Prime Test and Factorization]]
+- [[../number-theory/modulo-arithmetic.md|Modulo Arithmetic]]
 
 
 

@@ -4,16 +4,75 @@
     "type": "split",
     "children": [
       {
-        "id": "42b627c76832c4a2",
+        "id": "9540028adce43379",
         "type": "tabs",
         "children": [
           {
-            "id": "fd840ec321e60796",
+            "id": "1284261f4ef374e0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "number-theory/number-systems.md",
+                "file": "Index.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "84e74926ba34aea2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "topics/data-structures.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e54c36caf2c146bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data-structures/linked-list.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2d0d53916dc10b05",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data-structures/deque.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "7fc5fa52bc28cb2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02909c49703d939b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data-structures/queue.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
@@ -70,7 +129,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "64efa7548073aac2",
@@ -80,18 +140,6 @@
         "id": "6639ac53e333380c",
         "type": "tabs",
         "children": [
-          {
-            "id": "6416550974ed1271",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "number-theory/number-systems.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
           {
             "id": "25fe951d282d95ca",
             "type": "leaf",
@@ -104,26 +152,22 @@
             }
           },
           {
-            "id": "755d379808ad41dc",
+            "id": "54f68a5a499f3c17",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "data-structures/linked-list.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e05cfd242f13e689",
             "type": "leaf",
             "state": {
               "type": "mathpad-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "d6b5131a592a8c8a",
-            "type": "leaf",
-            "state": {
-              "type": "mermaid-toolbar-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "afc5e3298c1c40d7",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
@@ -132,7 +176,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -150,6 +195,37 @@
       "html-server:Turn Http Server Off": false
     }
   },
-  "active": "fd840ec321e60796",
-  "lastOpenFiles": []
+  "active": "e54c36caf2c146bb",
+  "lastOpenFiles": [
+    "topics/data-structures.md",
+    "Index.md",
+    "data-structures/deque.md",
+    "diagrams/linked_list.svg",
+    "diagrams/array.svg",
+    "diagrams/queue.svg",
+    "diagrams/stack.svg",
+    "diagrams/modn.svg",
+    "data-structures/queue.md",
+    "data-structures/stack.md",
+    "topics/memory.md",
+    "data-structures/heap.md",
+    "topics/io.md",
+    "topics/headers.md",
+    "topics/control-flow.md",
+    "control-flow/label-goto.md",
+    "p.md",
+    "topics/keywords.md",
+    "topics/preprocessors.md",
+    "topics/operators.md",
+    "operators/arithmetic.md",
+    "topics/scope.md",
+    "topics/data-types-vars.md",
+    "topics/c-basics.md",
+    "Untitled 1.md",
+    "topics/number-theory.md",
+    "algorithms/prime-test-factors.md",
+    "algorithms/fib-nums.md",
+    "topics/algorithms.md",
+    "topics/complexity.md"
+  ]
 }
