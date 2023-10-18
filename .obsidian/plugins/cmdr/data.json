@@ -27,7 +27,8 @@
       "Open homepage",
       "Open Mathpad",
       "Open Mermaid Toolbar",
-      "Omnisearch"
+      "Omnisearch",
+      "Create new drawing"
     ]
   },
   "spacing": 8,

@@ -1,9 +1,9 @@
 After stacks we gotta learn about queues.
 
-To imagine a stack, imagine a pipe in which you can put stuff from one end at a time and take the stuff out and one a at time too from the opposite end, and the rule is that you can view/pull out the element inserted first.
+To imagine a queue, imagine a pipe in which you can put stuff from one end at a time and take the stuff out and one a at time too from the opposite end, and the rule is that you can view/pull out the element inserted at the earliest.
 
 Below is a visual representation of a queue:
-![stack](../diagrams/queue.svg)
+![queue](../diagrams/queue.md)
 
 And a queue has some properties and functions:
 - Properties:
@@ -16,14 +16,13 @@ And a queue has some properties and functions:
 	3. `pop()` - remove the front element from the queue
 	4. `size()` - tells us how many elements are there in the queue
 	5. `empty()` - tells us if the queue is empty.
-
-
-
+![[../diagrams/operations/fixed-size-queue-functions.md]]
 now let's implement a queue:
 
 ```c
 #ifndef _C_QUEUE_H_
 #define _C_QUEUE_H_
+
 typedef struct queue_str {
 	const size_t MAX_CAP;
 	size_t size;
@@ -32,44 +31,45 @@ typedef struct queue_str {
 } queue_t;
 typedef queue_t* queue;
 
-queue create_queue(size_t mcap){
+queue create_queue(size_t mcap) {
 	queue res = NULL;
 	while(!res)
-		res = (queue)calloc(1, sizeof(queue_t));
-	*(size_t*)&(res->MAX_CAP) = mcap;
+		res = (queue) calloc(1, sizeof(queue_t));
+	* (size_t*) & (res->MAX_CAP) = mcap;
 	res->front = 0;
 	res->size = 0;
 	res->data = NULL;
 	while(!(res->data))
-		res->data=(int*)calloc(mcap,sizeof(int));
+		res->data = (int*) calloc(mcap, sizeof(int));
 	return res;
 }
 
-void push(queue q, int val){
+void push(queue q, int val) {
 	assert(q->size < q->MAX_CAP);
-	q->data[q->front + q->size++] = val;
+	q->data[(q->front + q->size) % q->MAX_CAP] = val;
+	q->size++;
 }
 
-void pop(queue q){
+void pop(queue q) {
 	assert(q->size > 0);
-	q->front++;
-	q->front %= q->MAX_CAP;
+	q->front = (q->front + 1) % q->MAX_CAP;
+	q->size--;
 }
 
-int empty(queue q){
+int empty(queue q) {
 	return q->size == 0;
 }
 
-size_t size(queue q){
+size_t size(queue q) {
 	return q->size;
 }
 
-int front(queue q){
+int front(queue q) {
 	assert(q->size > 0);
 	return q->data[q->front];
 }
 
-void free_queue(queue q){
+void free_queue(queue q) {
 	free(q->data);
 	free(q);
 }
@@ -79,7 +79,7 @@ void free_queue(queue q){
 
 > [!note] The reason we are using the `assert` function here is to disallow undefined behaviour like trying to pop or view the top value in an empty stack, pushing something in an already full stack. If `assert` receives a zero value or `false` it stops the execution of the program and exits it.
 
-Now there is one more stack where you don't have to worry about the max capacity, would you like to take a look into it.
+Now there is one more queue where you don't have to worry about the max capacity, would you like to take a look into it.
 
 For this we first need to learn about linked lists as they are going to be essential for making dynamic sized queues. 
 
@@ -92,8 +92,17 @@ Here it goes:
 typedef struct queue_node_str {
 	int data;
 	struct queue_node_str *next; 
-} node_t;
+} queue_node_t;
 typedef queue_node_t* queue_node;
+
+queue_node create_queue_node(int val) {
+	queue_node res = NULL;
+	while(!res)
+		res = (queue_node) calloc(1, sizeof(queue_node_t));
+	res->data = val;
+	res->next = NULL;
+	return res;
+}
 
 typedef struct queue_str {
 	queue_node front;
@@ -102,34 +111,23 @@ typedef struct queue_str {
 } queue_t;
 typedef queue_t* queue;
 
-queue_node create_queue_node(int val){
-	queue_node res = NULL;
+queue create_queue() {
+	queue res = NULL;
 	while(!res)
-		res = (queue_node)calloc(1, sizeof(queue_node_t));
-	res->data = val;
-	res->next = NULL;
-	return res;
-}
-
-queue create_queue(){
-	queue res=NULL;
-	while(!res)
-		res = (queue)calloc(1, sizeof(queue_t));
+		res = (queue) calloc(1, sizeof(queue_t));
 	res->first = NULL;
 	res->last = NULL;
 	res->size = 0;
 	return q;
 }
 
-void push(queue q, int val){
-	queue_node qn=create_queue_node(val);
-	if(!q->first){
+void push(queue q, int val) {
+	queue_node qn = create_queue_node(val);
+	if(q->first == NULL)
 		q->first = qn;
-		q->last = qn;
-	}else{
+	else
 		q->last->next = qn;
-		q->last = qn;
-	}
+	q->last = qn;
 	q->size++;
 }
 
@@ -143,11 +141,12 @@ void pop(queue q){
 	q->size--;
 }
 
-size_t size(queue q){
+size_t size(queue q) {
 	return q->size;
 }
 
-int front(queue q){
+int front(queue q) {
+	assert(q->front != NULL);
 	return q->front->data;
 }
 
@@ -156,10 +155,11 @@ int empty(queue q){
 }
 
 void free_queue(queue q){
-	while(q->front != NULL)
+	while(q->front)
 		pop(q);
 	free(q);
 }
+
 #endif
 ```
 

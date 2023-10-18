@@ -25,7 +25,7 @@ An array is a continuous block of memory divided into same sized segments(usuall
 
 The indexing for the elements in the list start from 0 to signify the gap between the that element the first one.
 
-![[../diagrams/array.svg|array]]
+![[../diagrams/array.md|array]]
 
 
 We have two different ways in which we can make arrays:

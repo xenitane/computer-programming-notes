@@ -21,13 +21,22 @@ myUnion1 y;
 u2 z;
 ```
 
+```c
+typedef union uu_u{
+	int x;
+	char y;
+	float f;
+} uu_t;
+
+```
+
 we can use whatever type of data type we want in a `union`.
 
 ```c
-typedef union{
+typedef union uu_u{
 	int x;
 	char s[4];
-}uu;
+}uu_t;
 
 
 uu var={.x=0x44434241};

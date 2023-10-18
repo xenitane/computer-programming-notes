@@ -11,7 +11,7 @@ Another notation in this situation that we'll need is, $a \equiv b \bmod{n}\impl
 Now let's take a dive into the world of modulo n.now as we go above `n-1`, 
 like n, n+1 etc we'll just loop back to 0, 1, 2
 
-![[../diagrams/modn.svg|circle of modulo n]]
+![[../diagrams/modn.md|circle of modulo n]]
 
 Further Topics:
 `class:multi-col-list`

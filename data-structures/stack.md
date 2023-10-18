@@ -3,7 +3,7 @@ Now we are gonna take a dive into the world of data structures and we'll start t
 To imagine a stack, imagine a container in which you can put stuff from one end at a time and also that's the same end from which you take the stuff out and one a at time too and the simple rule is the thing you can take out is the last thing you put in.
 
 Below is a visual representation of a stack:
-![stack](../diagrams/stack.svg)
+![stack](../diagrams/stack.md)
 
 And a stack has some properties and functions:
 - Properties:
@@ -17,6 +17,8 @@ And a stack has some properties and functions:
 	4. `size()` - tells us how many elements are there in the stack
 	5. `empty()` - tells us if the stack is empty.
 
+a visual for the above functions:
+![[../diagrams/operations/fixed-size-stack-functions.md]]
 
 now let's implement a stack:
 
@@ -31,43 +33,43 @@ typedef struct stack_str {
 } stack_t;
 typedef stack_t* stack;
 
-stack create_stack(int mcap){
+stack create_stack(int mcap) {
 	assert(mcap > 0);
 	stack res = NULL;
 	while(!res)
-		res = (stack)calloc(1, sizeof(stack_t));
-	*(int*)&(res->MAX_CAP) = mcap;
+		res = (stack) calloc(1, sizeof(stack_t));
+	* (int*) & (res->MAX_CAP) = mcap;
 	res->data = NULL:
 	while(!(res->data))
-		res->data = (int*)calloc(mcap, sizeof(int));
+		res->data = (int*) calloc(mcap, sizeof(int));
 	res->pos = 0;
 	return res;
 }
 
-void push(stack s, int val){
+void push(stack s, int val) {
 	assert(s->pos < s->MAX_CAP);
 	s->data[s->pos++] = val;
 }
 
-void pop(stack s){
+void pop(stack s) {
 	assert(s->pos > 0);
 	s->pos--;
 }
 
-int top(stack s){
+int top(stack s) {
 	assert(s->pos > 0);
 	return s->data[s->pos - 1];
 }
 
-size_t size(stack s){
+size_t size(stack s) {
 	return s->pos;
 }
 
-int empty(stack s){
+int empty(stack s) {
 	return s->pos == 0;
 }
 
-void free_stack(stack s){
+void free_stack(stack s) {
 	free(s->data);
 	free(s);
 }
@@ -79,7 +81,7 @@ void free_stack(stack s){
 
 Now there is one more stack where you don't have to worry about the max capacity, would you like to take a look into it.
 
-Well instead of `MAX_CAPACITY` we just use `capacity` and when we reach that capacity we just double the size of the data array and when we reach below half the capacity we half the size of data array and all this takes is a call to the `realloc` function. [reference](../topics/memory.md)
+We can just use dynamic arrays to create them, but there's a catch, for expansion and contraction we need to spend a lot of time and in some cases it might not even be possible as memory is not available. So we'll use linked lists.
 
 Here it goes:
 
@@ -87,63 +89,66 @@ Here it goes:
 #ifndef _C_STACK_H_
 #define _C_STACK_H_
 
-typedef struct stack_str {
-	size_t capacity;
-	size_t pos;
-	int *data;
-} stack_t;
-typedef stack_t* stack;
+typedef struct stack_node_str {
+	int data;
+	struct stack_node_str *next;
+} stack_node_t;
+typedef stack_node_t* stack_node;
 
-stack create_stack(){
-	stack res = NULL;
+stack_node create_stack_node(int val) {
+	stack_node res = NULL;
 	while(!res)
-		res = (stack)calloc(1, sizeof(stack_t));
-	res->capacity = 1;
-	res->pos = 0;
-	res->data = NULL;
-	while(!(res->data))
-		res->data = (int*)calloc(1, sizeof(int));
+		res = (stack_node) calloc(1, sizeof(stack_node_t));
+	res->data = val;
+	res->next  = NULL;
 	return res;
 }
 
-void push(stack s, int val){
-	s->data[s->pos++] = val;
-	if(s->val == s->capacity){
-		int *new_data = NULL;
-		while(!new_data)
-			new_data = (int*)realloc(s->data, 2 * s->capacity);
-		s->data = new_data;
-		s->capacity *= 2;
-	}
+typedef struct stack_str {
+	size_t size;
+	stack_node top;
+} stack_t;
+typedef stack_t* stack;
+
+stack create_stack() {
+	stack res = NULL;
+	while(!res)
+		res = (stack) calloc(1, sizeof(stack_t));
+	res->size = NULL;
+	res->top = NULL;
+	return res;
 }
 
-void pop(stack s){
-	assert(s->pos > 0);
-	s->pos--;
-	if((2 * s->pos) == s->capacity){
-		int *new_data = NULL;
-		while(!new_data)
-			new_data = (int*)realloc(s->data, s->capacity / 2);
-		s->data = new_data;
-		s->capacity /= 2;
-	}
+void push(stack s, int val) {
+	stack_node temp = create_stack_node(val);
+	temp->next = s->top;
+	s->top = temp;
+	s->size++;
 }
 
-void top(stack s){
-	assert(s->pos > 0);
-	return s->data[s->pos - 1];
+void pop(stack s) {
+	assert(s->top != NULL);
+	stack_node temp = s->top;
+	s->top = temp->next;
+	free(temp);
 }
 
-size_t size(stack s){
-	return s->pos;
+void top(stack s) {
+	assert(s->top != NULL);
+	return s->top->data;
 }
 
-int empty(stack s){
-	return s->pos == 0;
+size_t size(stack s) {
+	return s->size;
 }
 
-void free_stack(stack s){
-	free(s->data);
+int empty(stack s) {
+	return s->size == 0;
+}
+
+void free_stack(stack s) {
+	while(s->top != NULL)
+		pop(s);
 	free(s);
 }
 
