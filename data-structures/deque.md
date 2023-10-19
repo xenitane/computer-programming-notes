@@ -26,70 +26,61 @@ now let's implement a queue:
 ```c
 #ifndef _C_DEQUE_H_
 #define _C_DEQUE_H_
-typedef struct deque_str {
+typedef struct deque_str{
 	const size_t MAX_CAP;
 	size_t size;
 	size_t front;
 	int *data;
-} deque_t;
-typedef deque_t* deque;
+}deque_t;
+typedef deque_t *deque;
 
-deque create_deque(size_t mcap) {
+deque create_deque(size_t mcap){
+	assert(mcap>0);
 	deque res = NULL;
-	while(!res)
-		res = (deque) calloc(1,sizeof(deque_t));
-	* (size_t*) & (res->MAX_CAP) = mcap;
-	res->size = 0;
-	res->front = 0;
-	res->back = 0;
-	res->data = NULL;
-	while(!(res->data))
-		res->data = (int*)calloc(mcap,sizeof(int));
+	while(!res)res=(deque) calloc(1,sizeof(deque_t));
+	*(size_t*)&(res->MAX_CAP)=mcap,res->size=0,res->front=0,res->back=0,res->data=NULL;
+	while(!res->data)res->data=(int*)calloc(mcap,sizeof(int));
 	return res;
 }
 
-void push_back(deque d, int val) {
-	assert(d->size < d->MAX_CAP);
-	d->data[(d->front + d->size) % d->MAX_CAP] = val;
-	d->size++;
+void push_back(deque d, int val){
+	assert(d->size<d->MAX_CAP);
+	d->data[(d->front+d->size++)%d->MAX_CAP]=val;
 }
 
-void pop_back(deque d) {
-	assert(d->size > 0);
+void pop_back(deque d){
+	assert(d->size>0);
 	d->size--;
 }
 
-int back(deque d) {
-	assert(d->size > 0);
-	return d->data[(d->front + d->size - 1 + d->MAX_CAP) % d->MAX_CAP];
+int back(deque d){
+	assert(d->size>0);
+	return d->data[(d->front+d->size-1)%d->MAX_CAP];
 }
 
-void push_front(deque d, int val) {
-	assert(d->size < d->MAX_CAP);
-	d->size++;
-	d->front = (d->front - 1 + d->MAX_CAP) % d->MAX_CAP;
-	d->data[d->front] = val;
+void push_front(deque d, int val){
+	assert(d->size<d->MAX_CAP);
+	d->size++,d->data[d->front=(d->front?d->front:d->MAX_CAP)-1]=val;
 }
 
-void pop_front(deque d) {
-	assert(d->size > 0);
-	d->front = (d->front + 1) % d->MAX_CAP;
-	d->size--;
+void pop_front(deque d){
+	assert(d->size>0);
+	d->front=(++d->front^d->MAX_CAP)?d->front:0,d->size--;
 }
-int front(deque d) {
-	assert(d->size > 0)
+int front(deque d){
+	assert(d->size>0)
 	return d->data[d->front];
 }
 
-size_t size(deque d) {
+size_t size(deque d){
 	return d->size;
 }
 
 int empty(deque d){
-	return d->size == 0;
+	return d->size==0;
 }
 
-void free_deque(deque d) {
+void free_deque(deque d){
 	free(d->data);
 	free(d);
 }
@@ -109,107 +100,78 @@ Here it goes:
 #ifndef _C_QUEUE_H_
 #define _C_QUEUE_H_
 
-typedef struct deque_node_str {
+typedef struct deque_node_str{
 	int data;
 	struct deque_node_str *next;
 	struct deque_node_str *prev;
-} deque_node_t;
-typedef deque_node_t* deque_node;
+}deque_node_t;
+typedef deque_node_t *deque_node;
 
-typedef struct deque_str {
-	deque_node front;
-	deque_node back;
-	size_t size;
-} deque_t;
-typedef deque_t* deque;
-
-deque_node create_deque_node(int val) {
-	deque_node res = NULL;
-	while(!res)
-		res = (deque_node) calloc(1, sizeof(deque_node_t));
-	res->data = val;
-	res->next = NULL;
-	res->prev = NULL;
+deque_node create_deque_node(int val){
+	deque_node res= NULL;
+	while(!res)res=(deque_node)calloc(1,sizeof(deque_node_t));
+	res->data=val,res->next=NULL,res->prev=NULL;
 	return res;
 }
 
-queue create_deque() {
-	deque res = NULL;
-	while(!res)
-		res = (deque) calloc(1, sizeof(deque_t));
-	res->first = NULL;
-	res->last = NULL;
-	res->size = 0;
+typedef struct deque_str{
+	deque_node front;
+	deque_node back;
+	size_t size;
+}deque_t;
+typedef deque_t *deque;
+
+queue create_deque(){
+	deque res=NULL;
+	while(!res)res=(deque)calloc(1,sizeof(deque_t));
+	res->first=NULL,res->last=NULL,res->size=0;
 	return q;
 }
 
-void push_back(deque d, int val) {
-	deque_node dn = create_deque_node(val);
-	if(d->front) {
-		d->back->next = dn;
-		dn->prev = d->back;
-	} else
-		d->front = dn;
-	d->back = dn;
-	d->size++;
+void push_back(deque d, int val){
+	deque_node dn=create_deque_node(val);
+	(d->size++)&&(d->back->next=dn)&&(dn->prev=d->back)||(d->front=dn),d->back=dn;
 }
 
-void pop_back(deque d) {
-	assert(d->size > 0);
-	deque_node tmp = d->back;
-	d->back = d->back->prev;
-	if(d->back)
-		d->back->next = NULL;
-	else
-		d->front = NULL;
-	free(tmp);
-	d->size--;
+void pop_back(deque d){
+	assert(d->size>0);
+	deque_node temp=d->back;
+	d->back=d->back->prev,*(--d->size?&d->back->next:&d->front)=NULL;
+	free(temp);
 }
 
-int back(deque d) {
-	assert(d->size > 0);
+int back(deque d){
+	assert(d->size>0);
 	return d->back->data;
 }
 
-void push_front(deque d, int val) {
+void push_front(deque d, int val){
 	deque_node dn = create_deque_node(val);
-	if(d->front) {
-		d-front->prev = dn;
-		dn->next = d->front;
-	} else
-		d->back=dn;
-	d->front=dn;
-	d->size++;
+	(d->size++)&&(d->front->prev=dn)&&(dn->next=d->front)||(d->back=dn),d->front=dn;
 }
 
-void pop_front(deque d) {
-	assert(d->size  > 0);
-	deque_node tmp = d->front;
-	d->front = d->front->next;
-	if(d->front)
-		d->front->prev = NULL;
-	else
-		d->back = NULL;
-	free(tmp);
-	d->size--;
+void pop_front(deque d){
+	assert(d->size>0);
+	deque_node temp=d->front;
+	d->front=d->front->next,*(--d->size?&d->front->prev:&d->back)=NULL;
+	free(temp);
 }
 
-int front(deque d) {
-	assert(d->size > 0);
+int front(deque d){
+	assert(d->size>0);
 	return d->front->data;
 }
 
-size_t size(deque d) {
+size_t size(deque d){
 	return d->size;
 }
 
-int empty(deque d) {
-	return d->size == 0;
+int empty(deque d){
+	return d->size==0;
 }
 
-void free_deque(deque d) {
-	while(d->back)
-		pop_back(d);
+void free_deque(deque d){
+	while(d->back)pop_back(d);
 	free(d);
 }
 

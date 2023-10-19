@@ -4,79 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9540028adce43379",
+        "id": "cf527e3d78c898b9",
         "type": "tabs",
         "children": [
           {
-            "id": "1284261f4ef374e0",
+            "id": "9f32c2ca032c24c2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Index.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "84e74926ba34aea2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "topics/data-structures.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e54c36caf2c146bb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "data-structures/linked-list.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2d0d53916dc10b05",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "data-structures/deque.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "7fc5fa52bc28cb2f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "02909c49703d939b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "data-structures/queue.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -108,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#excalidraw",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -157,8 +93,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "data-structures/linked-list.md",
-                "linksCollapsed": false,
+                "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -191,41 +126,13 @@
       "switcher:Open quick switcher": false,
       "canvas:Create new canvas": false,
       "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "html-server:Turn Http Server On": false,
       "html-server:Turn Http Server Off": false
     }
   },
-  "active": "e54c36caf2c146bb",
+  "active": "9f32c2ca032c24c2",
   "lastOpenFiles": [
-    "topics/data-structures.md",
-    "Index.md",
-    "data-structures/deque.md",
-    "diagrams/linked_list.svg",
-    "diagrams/array.svg",
-    "diagrams/queue.svg",
-    "diagrams/stack.svg",
-    "diagrams/modn.svg",
-    "data-structures/queue.md",
-    "data-structures/stack.md",
-    "topics/memory.md",
-    "data-structures/heap.md",
-    "topics/io.md",
-    "topics/headers.md",
-    "topics/control-flow.md",
-    "control-flow/label-goto.md",
-    "p.md",
-    "topics/keywords.md",
-    "topics/preprocessors.md",
-    "topics/operators.md",
-    "operators/arithmetic.md",
-    "topics/scope.md",
-    "topics/data-types-vars.md",
-    "topics/c-basics.md",
-    "Untitled 1.md",
-    "topics/number-theory.md",
-    "algorithms/prime-test-factors.md",
-    "algorithms/fib-nums.md",
-    "topics/algorithms.md",
-    "topics/complexity.md"
+    "Index.md"
   ]
 }

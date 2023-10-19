@@ -26,50 +26,46 @@ now let's implement a stack:
 #ifndef _C_STACK_H_
 #define _C_STACK_H_
 
-typedef struct stack_str {
+typedef struct stack_str{
 	const size_t MAX_CAP;
 	size_t pos;
 	int *data;
-} stack_t;
-typedef stack_t* stack;
+}stack_t;
+typedef stack_t *stack;
 
-stack create_stack(int mcap) {
-	assert(mcap > 0);
-	stack res = NULL;
-	while(!res)
-		res = (stack) calloc(1, sizeof(stack_t));
-	* (int*) & (res->MAX_CAP) = mcap;
-	res->data = NULL:
-	while(!(res->data))
-		res->data = (int*) calloc(mcap, sizeof(int));
-	res->pos = 0;
+stack create_stack(int mcap){
+	assert(mcap>0);
+	stack res=NULL;
+	while(!res)res=(stack)calloc(1,sizeof(stack_t));
+	*(int*)&(res->MAX_CAP)=mcap,res->data=NULL,res->pos=0;
+	while(!res->data)res->data=(int*)calloc(mcap, sizeof(int));
 	return res;
 }
 
-void push(stack s, int val) {
-	assert(s->pos < s->MAX_CAP);
-	s->data[s->pos++] = val;
+void push(stack s, int val){
+	assert(s->pos<s->MAX_CAP);
+	s->data[s->pos++]=val;
 }
 
-void pop(stack s) {
-	assert(s->pos > 0);
+void pop(stack s){
+	assert(s->pos>0);
 	s->pos--;
 }
 
-int top(stack s) {
-	assert(s->pos > 0);
-	return s->data[s->pos - 1];
+int top(stack s){
+	assert(s->pos>0);
+	return s->data[s->pos-1];
 }
 
-size_t size(stack s) {
+size_t size(stack s){
 	return s->pos;
 }
 
-int empty(stack s) {
-	return s->pos == 0;
+int empty(stack s){
+	return s->pos==0;
 }
 
-void free_stack(stack s) {
+void free_stack(stack s){
 	free(s->data);
 	free(s);
 }
@@ -89,66 +85,59 @@ Here it goes:
 #ifndef _C_STACK_H_
 #define _C_STACK_H_
 
-typedef struct stack_node_str {
+typedef struct stack_node_str{
 	int data;
 	struct stack_node_str *next;
-} stack_node_t;
-typedef stack_node_t* stack_node;
+}stack_node_t;
+typedef stack_node_t *stack_node;
 
-stack_node create_stack_node(int val) {
-	stack_node res = NULL;
-	while(!res)
-		res = (stack_node) calloc(1, sizeof(stack_node_t));
-	res->data = val;
-	res->next  = NULL;
+stack_node create_stack_node(int val){
+	stack_node res=NULL;
+	while(!res)res=(stack_node)calloc(1,sizeof(stack_node_t));
+	res->data=val,res->next=NULL;
 	return res;
 }
 
-typedef struct stack_str {
+typedef struct stack_str{
 	size_t size;
 	stack_node top;
-} stack_t;
-typedef stack_t* stack;
+}stack_t;
+typedef stack_t *stack;
 
-stack create_stack() {
-	stack res = NULL;
-	while(!res)
-		res = (stack) calloc(1, sizeof(stack_t));
-	res->size = NULL;
-	res->top = NULL;
+stack create_stack(){
+	stack res=NULL;
+	while(!res)res=(stack)calloc(1,sizeof(stack_t));
+	res->size=NULL,res->top=NULL;
 	return res;
 }
 
-void push(stack s, int val) {
-	stack_node temp = create_stack_node(val);
-	temp->next = s->top;
-	s->top = temp;
-	s->size++;
+void push(stack s,int val){
+	stack_node temp=create_stack_node(val);
+	temp->next=s->top,s->top=temp,s->size++;
 }
 
-void pop(stack s) {
-	assert(s->top != NULL);
-	stack_node temp = s->top;
-	s->top = temp->next;
+void pop(stack s){
+	assert(s->top!=NULL);
+	stack_node temp=s->top;
+	s->top=temp->next;
 	free(temp);
 }
 
-void top(stack s) {
-	assert(s->top != NULL);
+void top(stack s){
+	assert(s->top!=NULL);
 	return s->top->data;
 }
 
-size_t size(stack s) {
+size_t size(stack s){
 	return s->size;
 }
 
-int empty(stack s) {
-	return s->size == 0;
+int empty(stack s){
+	return s->size==0;
 }
 
-void free_stack(stack s) {
-	while(s->top != NULL)
-		pop(s);
+void free_stack(stack s){
+	while(s->top!=NULL)pop(s);
 	free(s);
 }
 

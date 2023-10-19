@@ -23,53 +23,47 @@ now let's implement a queue:
 #ifndef _C_QUEUE_H_
 #define _C_QUEUE_H_
 
-typedef struct queue_str {
+typedef struct queue_str{
 	const size_t MAX_CAP;
 	size_t size;
 	size_t front;
 	int *data;
-} queue_t;
-typedef queue_t* queue;
+}queue_t;
+typedef queue_t *queue;
 
-queue create_queue(size_t mcap) {
-	queue res = NULL;
-	while(!res)
-		res = (queue) calloc(1, sizeof(queue_t));
-	* (size_t*) & (res->MAX_CAP) = mcap;
-	res->front = 0;
-	res->size = 0;
-	res->data = NULL;
-	while(!(res->data))
-		res->data = (int*) calloc(mcap, sizeof(int));
+queue create_queue(size_t mcap){
+	assert(mcap>0);
+	queue res=NULL;
+	while(!res)res=(queue)calloc(1,sizeof(queue_t));
+	*(size_t*)&(res->MAX_CAP)=mcap,res->front=0,res->size=0,res->data=NULL;
+	while(!res->data)res->data=(int*)calloc(mcap,sizeof(int));
 	return res;
 }
 
-void push(queue q, int val) {
-	assert(q->size < q->MAX_CAP);
-	q->data[(q->front + q->size) % q->MAX_CAP] = val;
-	q->size++;
+void push(queue q, int val){
+	assert(q->size<q->MAX_CAP);
+	q->data[(q->front+q->size++)%q->MAX_CAP]=val;
 }
 
-void pop(queue q) {
-	assert(q->size > 0);
-	q->front = (q->front + 1) % q->MAX_CAP;
-	q->size--;
+void pop(queue q){
+	assert(q->size>0);
+	q->front=(++q->front^q->MAX_CAP)?q->front:0,q->size--;
 }
 
-int empty(queue q) {
-	return q->size == 0;
+int empty(queue q){
+	return q->size==0;
 }
 
-size_t size(queue q) {
+size_t size(queue q){
 	return q->size;
 }
 
-int front(queue q) {
-	assert(q->size > 0);
+int front(queue q){
+	assert(q->size>0);
 	return q->data[q->front];
 }
 
-void free_queue(queue q) {
+void free_queue(queue q){
 	free(q->data);
 	free(q);
 }
@@ -89,74 +83,60 @@ Here it goes:
 #ifndef _C_QUEUE_H_
 #define _C_QUEUE_H_
 
-typedef struct queue_node_str {
+typedef struct queue_node_str{
 	int data;
 	struct queue_node_str *next; 
-} queue_node_t;
-typedef queue_node_t* queue_node;
+}queue_node_t;
+typedef queue_node_t *queue_node;
 
-queue_node create_queue_node(int val) {
-	queue_node res = NULL;
-	while(!res)
-		res = (queue_node) calloc(1, sizeof(queue_node_t));
-	res->data = val;
-	res->next = NULL;
+queue_node create_queue_node(int val){
+	queue_node res=NULL;
+	while(!res)res=(queue_node)calloc(1,sizeof(queue_node_t));
+	res->data=val,res->next=NULL;
 	return res;
 }
 
-typedef struct queue_str {
+typedef struct queue_str{
 	queue_node front;
 	queue_node back;
 	size_t size;
-} queue_t;
-typedef queue_t* queue;
+}queue_t;
+typedef queue_t *queue;
 
-queue create_queue() {
-	queue res = NULL;
-	while(!res)
-		res = (queue) calloc(1, sizeof(queue_t));
-	res->first = NULL;
-	res->last = NULL;
-	res->size = 0;
+queue create_queue(){
+	queue res=NULL;
+	while(!res)res=(queue)calloc(1,sizeof(queue_t));
+	res->first=NULL,res->last=NULL,res->size=0;
 	return q;
 }
 
-void push(queue q, int val) {
-	queue_node qn = create_queue_node(val);
-	if(q->first == NULL)
-		q->first = qn;
-	else
-		q->last->next = qn;
-	q->last = qn;
-	q->size++;
+void push(queue q, int val){
+	queue_node qn=create_queue_node(val);
+	(q->size)&&(q->last->next=qn)||(q->first=qn),q->last=qn,q->size++;
 }
 
 void pop(queue q){
 	assert(q->front != NULL);
-	queue_node tmp = q->front;
-	q->front = tmp->next;
-	if(q->front == NULL)
-		q->back = NULL;
-	free(tmp);
-	q->size--;
+	queue_node temp=q->front;
+	q->front=tmp->next,(q->size)||(q->back=NULL),q->size--;
+	free(temp);
 }
 
-size_t size(queue q) {
+size_t size(queue q){
 	return q->size;
 }
 
-int front(queue q) {
-	assert(q->front != NULL);
+int front(queue q){
+	assert(q->front!=NULL);
 	return q->front->data;
 }
 
 int empty(queue q){
-	return q->size == 0;
+	return q->size==0;
 }
 
 void free_queue(queue q){
-	while(q->front)
-		pop(q);
+	while(q->front)pop(q);
 	free(q);
 }
 

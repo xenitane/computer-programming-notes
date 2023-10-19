@@ -21,6 +21,8 @@ So you remember that we can create collections of elements as mentioned earlier.
 	type arr[capacity];
 	
 	arr[idx]; // fetches the element at index idx (0-based indexing)
+
+	idx[arr]; // also works the same
 	```
 - Arrays and pointers are alike in terms of member access and they work in this fashion.
 	```c
