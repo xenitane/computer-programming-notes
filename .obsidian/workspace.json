@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "cf527e3d78c898b9",
+        "id": "bcfc3802bded9f0f",
         "type": "tabs",
         "children": [
           {
-            "id": "9f32c2ca032c24c2",
+            "id": "229dd8ef5be5e63f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "data-structures/linked-list.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -93,6 +98,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "data-structures/linked-list.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": true
               }
@@ -111,8 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -131,8 +136,25 @@
       "html-server:Turn Http Server Off": false
     }
   },
-  "active": "9f32c2ca032c24c2",
+  "active": "229dd8ef5be5e63f",
   "lastOpenFiles": [
-    "Index.md"
+    "topics/data-structures.md",
+    "Index.md",
+    "operators/delim.md",
+    "diagrams/heap.md",
+    "data-structures/queue.md",
+    "diagrams/binary-rooted-tree.md",
+    "diagrams/modn.md",
+    "number-theory/multiplicative-inverse.md",
+    "number-theory/modulo-arithmetic.md",
+    "topics/number-theory.md",
+    "algorithms/prime-test-factors.md",
+    "diagrams/linked-list.md",
+    "diagrams/queue.md",
+    "diagrams/stack.md",
+    "diagrams/array.md",
+    "data-structures/heap.md",
+    "data-structures/deque.md",
+    "data-structures/stack.md"
   ]
 }
